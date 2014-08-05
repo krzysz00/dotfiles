@@ -1,0 +1,13 @@
+Host cse01
+     HostName cse01.cse.unt.edu
+     User kd0136
+Host cao
+     HostName crawl.akrasiac.org
+     User joshua
+     IdentityFile ~/.ssh/cao_key
+     Compression yes
+Host cdo
+     User crawl
+     HostName crawl.develz.org
+     IdentityFile ~/.ssh/cao_key
+     Compression yes
