@@ -1,0 +1,3 @@
+OPTIONS=pickup_types:$,verbose,color,lit_corridor
+OPTIONS=showexp,time,showweight,invweight,showdmg
+OPTIONS=!fixinv,lootabc

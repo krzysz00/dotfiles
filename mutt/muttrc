@@ -1,0 +1,40 @@
+set realname="Krzysztof Drewniak"
+folder-hook 'imaps://krzysdrewniak@gmail.com@imap.gmail.com:993' 'source ~/.mutt/account.gmail'
+folder-hook 'pod51000.outlook.com' 'source ~/.mutt/account.unt'
+folder-hook 'imaps://kdrewniak@utexas.edu@imap.gmail.com:993' 'source ~/.mutt/account.ut'
+
+macro index <f2> '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+macro index <f3> '<sync-mailbox><enter-command>source ~/.mutt/account.unt<enter><change-folder>!<enter>'
+macro index <f4> '<sync-mailbox><enter-command>source ~/.mutt/account.ut<enter><change-folder>!<enter>'
+
+source ~/.mutt/account.gmail
+
+macro index,pager gd "<save-message>=[Gmail]/Trash<enter>" "Send to Trash"
+bind index,pager gg group-reply
+
+set header_cache=~/.mutt-cache/headers
+set message_cachedir=~/.mutt-cache/bodies
+set certificate_file=~/.mutt/certificates
+
+set move = no
+
+set sort = 'threads'
+set sort_aux = 'date-received'
+set message_cachedir=~/.mutt-cache/imap
+
+set send_charset="us-ascii:utf-8"
+
+set imap_check_subscribed = yes
+set sidebar_sort = yes
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# Ctrl-o to open selected folder.
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+set pgp_use_gpg_agent=yes 
+set pgp_autosign=yes
+set pgp_sign_as=2388E924
+set pgp_replyencrypt=yes
+set pgp_timeout=900
+set pgp_good_sign="^gpg: Good signature from"
