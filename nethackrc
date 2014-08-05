@@ -1,0 +1,13 @@
+OPTIONS=lit_corridor,showexp,time
+OPTIONS=pickup_types:$
+OPTIONS=hilite_pet,hpmon
+OPTIONS=!fixinv,lootabc,safe_pet,sortpack,tombstone,color
+OPTIONS=verbose,news,fruit:potato,DECgraphics
+
+OPTIONS=menucolors
+MENUCOLOR=" blessed "=green
+MENUCOLOR=" holy "=green
+MENUCOLOR=" uncursed "=yellow
+MENUCOLOR=" cursed "=red
+MENUCOLOR=" unholy "=red
+MENUCOLOR=" cursed .* (being worn)"=orange&underline

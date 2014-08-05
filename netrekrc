@@ -1,0 +1,10 @@
+soundDir:	/home/krzys/progs/share/netrek/sound/sounds
+sound:		on
+#soundplayer:	bgsndplay
+keymap:		tT tTt
+UseLite:	on
+lite.taking:	/c/l
+lite.pickup:	/h/|%p++ @ %l|
+lite.base_ogg:	/g/m
+warnHull:	on
+lite.help:	%?%S=SB%{/c%}%?%a>0%{/c%}
