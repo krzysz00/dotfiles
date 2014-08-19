@@ -30,6 +30,7 @@ myManageHook = composeAll [
 
 defaults =
   defaultConfig { modMask = mod4Mask
+                , terminal = "gnome-terminal"
                 , manageHook = myManageHook <+> manageHook defaultConfig
                 , layoutHook = minimize (Tall 1 (3/100) (1/2)) ||| layoutHook defaultConfig
                 , handleEventHook = minimizeEventHook <+> handleEventHook defaultConfig}
