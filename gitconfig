@@ -1,0 +1,12 @@
+[user]
+	email = <krzysdrewniak@gmail.com>
+	name = Krzysztof Drewniak
+	signkey = 2388E924
+[color]
+	ui = auto
+[push]
+	default = simple
+[rerere]
+	enabled = true
+[core]
+	editor = emacsclient -a=\"\"
