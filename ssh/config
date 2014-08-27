@@ -11,3 +11,7 @@ Host cdo
      HostName crawl.develz.org
      IdentityFile ~/.ssh/cao_key
      Compression yes
+Host *.cs.utexas.edu
+     User drewniak
+     ForwardX11 yes
+     ForwardX11Trusted yes
