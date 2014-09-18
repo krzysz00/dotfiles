@@ -48,14 +48,14 @@ PS1="%B%F{yellow}%n@%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
 RPROMPT='${vcs_info_msg_0_}'
 
 trunk="$HOME/Programing/lisp/motm/trunk/"
-school="$HOME/Dropbox/tams/"
+school="$HOME/Dropbox/fall-2014/"
 : ~trunk ~school
 
 export EDITOR="/usr/bin/emacs"
 alias e='emacsclient -a=""'
 export EMAIL="krzysdrewniak@gmail.com"
 export ANDROID_HOME="$HOME/progs/android/android"
-
+alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
 if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-256color"
 fi
