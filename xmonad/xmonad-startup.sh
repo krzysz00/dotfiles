@@ -3,7 +3,7 @@
 #sleep 5
 #trayer --transparent true --alpha 10 --tint 0x303030 --SetDockType true --SetPartialStrut true --height 24 &
 xscreensaver -no-splash &
-gnome-settings-daemon &
+unity-settings-daemon &
 sleep 3
 # fbpanel &
 lxpanel &
