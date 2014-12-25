@@ -10,12 +10,12 @@ lxpanel &
 killall gnome-screensaver
 sleep 1
 gnome-sound-applet &
+volumeicon &
 dropbox start &
 nm-applet &
 redshift &
 keepassx -min -lock &
 skype &
-# volumeicon &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
 indicator-cpufreq &
