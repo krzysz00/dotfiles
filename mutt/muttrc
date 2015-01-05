@@ -32,9 +32,11 @@ bind index,pager \CP sidebar-prev
 bind index,pager \CN sidebar-next
 bind index,pager \CO sidebar-open
 
-set pgp_use_gpg_agent=yes 
+set pgp_use_gpg_agent=yes
 set pgp_autosign=yes
 set pgp_sign_as=2388E924
 set pgp_replyencrypt=yes
 set pgp_timeout=900
 set pgp_good_sign="^gpg: Good signature from"
+
+set editor="emacsclient"
