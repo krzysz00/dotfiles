@@ -48,7 +48,7 @@ PS1="%B%F{yellow}%n@%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
 RPROMPT='${vcs_info_msg_0_}'
 
 trunk="$HOME/Programing/lisp/motm/trunk/"
-school="$HOME/Dropbox/fall-2014/"
+school="$HOME/Dropbox/spring-2015/"
 : ~trunk ~school
 
 export EDITOR="/usr/bin/emacs"
@@ -76,3 +76,6 @@ fi
 
 GPG_TTY=$(tty)
 export GPG_TTY
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
