@@ -116,7 +116,7 @@ chatnets = {
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
-  { name = "#ppc"; chatnet = "SorceryNet"; autojoin = "yes"; }
+  { name = "#ppc"; chatnet = "SorceryNet"; autojoin = "yes"; },
   { name = "#sbcl"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
@@ -298,6 +298,7 @@ settings = {
     beep_command = "paplay /usr/share/sounds/ubuntu/stereo/message-new-instant.ogg";
     beep_when_not_away = "yes";
   };
+  "irc/dcc" = { dcc_download_path = "/tmp"; dcc_autoget = "yes"; };
 };
 hilights = (
   { text = "Tomash"; nick = "yes"; word = "yes"; },
