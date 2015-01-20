@@ -3,19 +3,19 @@
 #sleep 5
 #trayer --transparent true --alpha 10 --tint 0x303030 --SetDockType true --SetPartialStrut true --height 24 &
 xscreensaver -no-splash &
-gnome-settings-daemon &
+unity-settings-daemon &
 sleep 3
 # fbpanel &
 lxpanel &
 killall gnome-screensaver
 sleep 1
 gnome-sound-applet &
+volumeicon &
 dropbox start &
 nm-applet &
 redshift &
 keepassx -min -lock &
 skype &
-# volumeicon &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
 indicator-cpufreq &
