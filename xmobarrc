@@ -10,5 +10,5 @@ Config { font = "xft:Inconsolata:size=16,style=Medium"
                     , Run Kbd [("us(dvorak)", ""), ("us", "QWER ")]
                     ]
        , alignSep = "}{"
-     , template = "%date% <action=/home/krzys/.xmonad/xmonad-resolution.sh><fc=blue>Re-desktop</fc></action>} %StdinReader% { CPU: %multicpu% @ %cpufreq% %battery% %kbd%"
+     , template = "%date% <action=/home/krzys/.xmonad/xmonad-resolution.sh><fc=blue>De-tile</fc></action>} %StdinReader% { CPU: %multicpu% @ %cpufreq% %battery% %kbd%"
        }
