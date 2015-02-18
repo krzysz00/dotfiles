@@ -1,13 +1,14 @@
-Config { font = "xft:Inconsolata:pixelsize=18,style=Medium"
+Config { font = "xft:Inconsolata:size=16,style=Medium"
        , bgColor = "#303030"
        , fgColor = "white"
        , position = Top
-       , commands = [ Run Battery ["-t", "Battery: <acstatus> <timeleft> (<left>%)", "-L", "10", "-H", "90", "-l", "red", "-h", "green", "--", "-O", "<fc=green>Charging</fc>", "-o", "Battery"] 100
-                    , Run MultiCpu ["-t", "CPU: <total>%", "-h", "red", "-H", "200"] 50
+       , commands = [ Run Battery ["-t", "<acstatus> <timeleft> (<left>%)", "-L", "10", "-H", "90", "-l", "red", "-h", "green", "--", "-O", "<fc=green>Charging</fc>", "-o", "Battery"] 100
+                    , Run MultiCpu ["-t", "<total>%", "-h", "red", "-H", "200"] 50
                     , Run StdinReader
-                    , Run CpuFreq ["-t", "Speed: <cpu0>"] 100
-                    , Run Date "%a %B %d, %Y <fc=yellow>%H:%M:%S</fc>" "date" 10
+                    , Run CpuFreq ["-t", "<cpu0>"] 100
+                    , Run Date "%a %b %d, %Y <fc=yellow>%H:%M:%S</fc>" "date" 10
+                    , Run Kbd [("us(dvorak)", ""), ("us", "QWER ")]
                     ]
        , alignSep = "}{"
-       , template = "%date% <action=/home/krzys/.xmonad/xmonad-resolution.sh><fc=blue>New screen</fc></action>} %StdinReader% { %multicpu% %cpufreq% %battery%"
+     , template = "%date% <action=/home/krzys/.xmonad/xmonad-resolution.sh><fc=blue>Re-desktop</fc></action>} %StdinReader% { CPU: %multicpu% @ %cpufreq% %battery% %kbd%"
        }
