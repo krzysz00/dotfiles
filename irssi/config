@@ -30,10 +30,15 @@ servers = (
     autoconnect = "yes";
     chatnet = "SorceryNet";
   },
-  { 
+  {
     address = "irc.freenode.net";
     port = "6667";
     chatnet = "Freenode";
+  }
+  {
+    address = "irc.mozilla.org";
+    port = "6667";
+    chatnet = "Mozilla";
   }
 );
 
@@ -107,6 +112,10 @@ chatnets = {
     autosendcmd = "/^msg nickserv identify ***REMOVED***;wait 1000";
   };
   Freenode = {
+    type = "IRC";
+    autosendcmd = "/^msg nickserv identify ***REMOVED***";
+  };
+  Mozilla = {
     type = "IRC";
     autosendcmd = "/^msg nickserv identify ***REMOVED***";
   };
@@ -291,7 +300,7 @@ settings = {
   "fe-common/core" = {
     autolog_path = "~/Documents/irc-logs/$tag/$0.log";
     autolog = "yes";
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
+    beep_msg_level = "MSGS DCC DCCMSGS HILIGHT";
     bell_beeps = "yes";
   };
   "perl/core/scripts" = {
