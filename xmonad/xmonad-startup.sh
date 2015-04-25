@@ -4,18 +4,18 @@
 #trayer --transparent true --alpha 10 --tint 0x303030 --SetDockType true --SetPartialStrut true --height 24 &
 xscreensaver -no-splash &
 unity-settings-daemon &
-sleep 3
+sleep 2
 # fbpanel &
 lxpanel &
 killall gnome-screensaver
-sleep 1
+sleep 3
 gnome-sound-applet &
 volumeicon &
 dropbox start &
 nm-applet &
 redshift &
-keepassx -min -lock &
 skype &
+keepassx -min -lock &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
 indicator-cpufreq &
