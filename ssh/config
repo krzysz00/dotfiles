@@ -15,3 +15,12 @@ Host *.cs.utexas.edu
      User drewniak
      ForwardX11 yes
      ForwardX11Trusted yes
+
+Host pjh.whatsapp.net pjh*.*.whatsapp.net
+     ProxyCommand none
+
+Host *.*.whatsapp.net *.whatsapp.net
+     ProxyCommand ssh -q -l $USER pjh.whatsapp.net nc %h %p
+
+Host c??? ??????
+     ProxyCommand ssh -q -l $USER pjh.whatsapp.net nc %h %p
