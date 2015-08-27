@@ -15,3 +15,7 @@ Host *.cs.utexas.edu
      User drewniak
      ForwardX11 yes
      ForwardX11Trusted yes
+Host gheith
+     User git
+     HostName cs429.com
+     IdentityFile ~/.ssh/id_rsa_gheith
