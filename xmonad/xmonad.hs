@@ -11,7 +11,7 @@ main = do
 --   spawn "sh /home/krzys/.xmonad/xmonad-startup.sh"
   xmonad =<< statusBar xmobar' myPP toggleStrutsKey (ewmh $ defaults)
 
-xmobar' = "sh /home/krzys/.xmonad/xmonad-startup.sh"
+xmobar' = "sh ~/.xmonad/xmonad-startup.sh"
 
 myPP = xmobarPP { ppCurrent = (\x -> "<fc=green>" ++ x ++ "</fc>")
                 , ppHidden = id
