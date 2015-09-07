@@ -11,7 +11,7 @@ main = do
 --   spawn "sh /home/krzys/.xmonad/xmonad-startup.sh"
   xmonad =<< statusBar xmobar' myPP toggleStrutsKey (ewmh $ defaults)
 
-xmobar' = "sh /home/krzys/.xmonad/xmonad-startup.sh"
+xmobar' = "sh ~/.xmonad/xmonad-startup.sh"
 
 myPP = xmobarPP { ppCurrent = (\x -> "<fc=green>" ++ x ++ "</fc>")
                 , ppHidden = id
@@ -34,7 +34,7 @@ defaults =
                 , manageHook = myManageHook <+> manageHook defaultConfig
                 , layoutHook = minimize (Tall 1 (3/100) (1/2)) ||| layoutHook defaultConfig
                 , handleEventHook = minimizeEventHook <+> handleEventHook defaultConfig}
-  `additionalKeysP` [("M-C-S-q", spawn "dbus-send --system --print-reply  --dest=\"org.freedesktop.UPower\" /org/freedesktop/UPower org.freedesktop.UPower.Suspend")
+  `additionalKeysP` [("M-C-S-q", spawn "systemctl suspend")
                     ,("M-C-q", spawn "dm-tool switch-to-greeter")
                     ,("M-S-l", spawn "xscreensaver-command -lock")
                     ,("M-m", withFocused minimizeWindow)

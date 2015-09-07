@@ -2,151 +2,141 @@
 # Use preference dialog in lxpanel to adjust config when you can.
 
 Global {
-    edge=bottom
-    allign=left
-    margin=0
-    widthtype=percent
-    width=100
-    height=26
-    transparent=1
-    tintcolor=#303030
-    alpha=255
-    autohide=0
-    heightwhenhidden=2
-    setdocktype=1
-    setpartialstrut=1
-    usefontcolor=1
-    fontsize=16
-    fontcolor=#ffffff
-    usefontsize=1
-    background=0
-    backgroundfile=/usr/share/lxpanel/images/background.png
-    iconsize=24
-    loglevel=2
+  edge=bottom
+  allign=left
+  margin=0
+  widthtype=percent
+  width=100
+  height=26
+  transparent=1
+  tintcolor=#303030
+  alpha=255
+  autohide=0
+  heightwhenhidden=2
+  setdocktype=1
+  setpartialstrut=1
+  usefontcolor=1
+  fontsize=16
+  fontcolor=#ffffff
+  usefontsize=1
+  background=0
+  backgroundfile=/usr/share/lxpanel/images/background.png
+  iconsize=24
+  loglevel=2
 }
-
 Plugin {
-    type = space
-    Config {
-        Size=2
+  type=space
+  Config {
+    Size=2
+  }
+}
+Plugin {
+  type=menu
+  Config {
+    image=/usr/share/lxpanel/images/my-computer.png
+    system {
     }
-}
-
-Plugin {
-    type = menu
-    Config {
-        image=/usr/share/lxpanel/images/my-computer.png
-        system {
-        }
-        separator {
-        }
-        item {
-            command=run
-        }
-        separator {
-        }
-        item {
-            image=gnome-logout
-            command=logout
-        }
+    separator {
     }
-}
-
-Plugin {
-    type = launchbar
-    Config {
-        Button {
-            id=pcmanfm.desktop
-        }
-        Button {
-            id=lxde-x-terminal-emulator.desktop
-        }
-        Button {
-            id=lxde-x-www-browser.desktop
-        }
+    item {
+      command=run
     }
-}
-
-Plugin {
-    type = space
-    Config {
-        Size=4
+    separator {
     }
-}
-
-Plugin {
-    type = wincmd
-    Config {
-        image=window-manager
-        Button1=iconify
-        Button2=shade
-        Toggle=0
+    item {
+      image=gnome-logout
+      command=logout
     }
+  }
 }
-
 Plugin {
-    type = space
-    Config {
-        Size=100
+  type=launchbar
+  Config {
+    Button {
+      id=pcmanfm.desktop
     }
-}
-
-Plugin {
-    type = taskbar
-    Config {
-        tooltips=1
-        IconsOnly=0
-        ShowAllDesks=0
-        UseMouseWheel=1
-        UseUrgencyHint=1
-        FlatButton=0
-        MaxTaskWidth=150
-        spacing=1
-        GroupedTasks=0
+    Button {
+      id=lxde-x-terminal-emulator.desktop
     }
-}
-
-Plugin {
-    type = space
-    Config {
-        Size=100
+    Button {
+      id=lxde-x-www-browser.desktop
     }
+  }
 }
-
 Plugin {
-    type = tray
+  type=space
+  Config {
+    Size=4
+  }
 }
-
 Plugin {
-    type = space
-    Config {
-        Size=10
-    }
+  type=wincmd
+  Config {
+    image=window-manager
+    Button1=iconify
+    Button2=shade
+    Toggle=0
+  }
 }
-
 Plugin {
-    type = dclock
-    Config {
-        ClockFmt=%T
-        TooltipFmt=%A %x
-        BoldFont=0
-        IconOnly=0
-        CenterText=0
-    }
+  type=space
+  Config {
+    Size=100
+  }
 }
-
 Plugin {
-    type = xkb
-    Config {
-        DisplayType=0
-        PerWinLayout=0
-        NoResetOpt=0
-        KeepSysLayouts=1
-        Model=pc105
-        LayoutsList=us
-        VariantsList=,
-        ToggleOpt=shift_caps_toggle
-        FlagSize=3
-    }
+  type=taskbar
+  Config {
+    tooltips=1
+    IconsOnly=0
+    ShowAllDesks=0
+    UseMouseWheel=1
+    UseUrgencyHint=1
+    FlatButton=0
+    MaxTaskWidth=150
+    spacing=0
+    GroupedTasks=0
+  }
 }
-
+Plugin {
+  type=tray
+  Config {
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=10
+  }
+}
+Plugin {
+  type=dclock
+  Config {
+    ClockFmt=%T
+    TooltipFmt=%A %x
+    BoldFont=0
+    IconOnly=0
+    CenterText=0
+  }
+}
+Plugin {
+  type=xkb
+  Config {
+    DisplayType=0
+    PerWinLayout=0
+    NoResetOpt=0
+    KeepSysLayouts=1
+    Model=pc105
+    LayoutsList=us
+    VariantsList=,
+    ToggleOpt=shift_caps_toggle
+    FlagSize=3
+  }
+}
+Plugin {
+  type=space
+  Config {
+    Size=2
+  }
+  expand=1
+}
