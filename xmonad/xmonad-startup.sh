@@ -15,7 +15,7 @@ dropbox start &
 nm-applet &
 redshift &
 skype &
-keepassx -min -lock &
+#keepassx &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
 indicator-cpufreq &
