@@ -33,7 +33,7 @@ defaults =
                 , terminal = "gnome-terminal"
                 , manageHook = myManageHook <+> manageHook defaultConfig
                 , layoutHook = minimize (Tall 1 (3/100) (1/2)) ||| layoutHook defaultConfig
-                , handleEventHook = minimizeEventHook <+> handleEventHook defaultConfig}
+                , handleEventHook = minimizeEventHook <+> handleEventHook defaultConfig <+> fullscreenEventHook}
   `additionalKeysP` [("M-C-S-q", spawn "systemctl suspend")
                     ,("M-C-q", spawn "dm-tool switch-to-greeter")
                     ,("M-S-l", spawn "xscreensaver-command -lock")
