@@ -21,7 +21,11 @@ skype &
 indicator-cpufreq &
 #fi
 
-feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
+if [[ -x ~/.fehbg ]]; then
+    ~/.fehbg
+else
+    feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
+fi
 
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "add Control = Caps_Lock"
