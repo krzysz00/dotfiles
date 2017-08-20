@@ -1,6 +1,6 @@
 #!/bin/bash
 
-feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
+~/.fehbg
 # killall trayer
 # if [[ -e /tmp/fluxgui_krzys.pid ]]
 # then
