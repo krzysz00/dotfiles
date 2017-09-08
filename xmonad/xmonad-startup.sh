@@ -21,8 +21,10 @@ skype &
 indicator-cpufreq &
 #fi
 
-if [[ -x ~/.fehbg ]]; then
-    ~/.fehbg
+if [[ -f $HOME/Pictures/background.jpg ]]; then
+    feh --bg-fill $HOME/Pictures/background.jpg
+elif [[ -x $HOME/.fehbg ]]; then
+    $HOME/.fehbg
 else
     feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
 fi
