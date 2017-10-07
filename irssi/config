@@ -109,15 +109,12 @@ chatnets = {
   SorceryNet = {
     type = "IRC";
     nick = "Tomash";
-    autosendcmd = "/^msg nickserv identify ***REMOVED***;wait 1000";
   };
   Freenode = {
     type = "IRC";
-    autosendcmd = "/^msg nickserv identify ***REMOVED***";
   };
   Mozilla = {
     type = "IRC";
-    autosendcmd = "/^msg nickserv identify ***REMOVED***";
   };
   help = { type = "IRC"; };
 };
