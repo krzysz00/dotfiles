@@ -1,6 +1,8 @@
 #!/bin/bash
 
+killall lxpanel
 ~/.fehbg
+exec lxpanel
 # killall trayer
 # if [[ -e /tmp/fluxgui_krzys.pid ]]
 # then

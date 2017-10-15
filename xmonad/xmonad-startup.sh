@@ -14,7 +14,7 @@ volumeicon &
 dropbox start &
 nm-applet &
 redshift &
-skype &
+skypeforlinux &
 #keepassx &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
