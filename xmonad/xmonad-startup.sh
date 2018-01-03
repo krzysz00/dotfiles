@@ -21,13 +21,7 @@ keepassxc &
 indicator-cpufreq &
 #fi
 
-if [[ -f $HOME/Pictures/background.jpg ]]; then
-    feh --bg-fill $HOME/Pictures/background.jpg
-elif [[ -x $HOME/.fehbg ]]; then
-    $HOME/.fehbg
-else
-    feh --bg-fill /usr/share/backgrounds/warty-final-ubuntu.png
-fi
+$HOME/.fehbg
 
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "add Control = Caps_Lock"
