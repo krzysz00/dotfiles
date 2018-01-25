@@ -5,11 +5,19 @@
 #/addworld -Tlp coders espol PW_HERE coders.ackmud.net 4444
 #/addworld -x postfurry Tomash PW_HERE muck.postfurry.net 5555
 /load kb-emacs.tf
+
+/def play = \
+    /if ({1} !~ "") \
+        /eval /sys (/usr/bin/paplay %* > /dev/null 2>&1 &) %; \
+    /endif
+
 /def r = recall
 /def er = enter %; d
 /def rec = run wn %; sleep bench
 /def unrec = stand %; run se
 /def erec = /er %; /rec
+
+/def -wpostfurry -mglob -t "*" = /play "/usr/share/sounds/freedesktop/stereo/message-new-instant.oga"
 /set isize=2
 #/def -mregexp -h"send ([^%]{1};)+" stack_hook = /eval $[replace(";", "%;", {*})]
 /def drink = enter %; run nnn %; drink fountain %; run 3sd }
