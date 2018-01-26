@@ -6,6 +6,7 @@ export EMAIL="krzysdrewniak@gmail.com"
 export ANDROID_HOME="$HOME/progs/android/android"
 
 export GOPATH="$HOME/Programming/go"
+export PDFVIEWER=evince
 
 umask 022
 
