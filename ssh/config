@@ -21,3 +21,5 @@ Host gheith
      User git
      HostName cs429.com
      IdentityFile ~/.ssh/id_rsa_gheith
+Host *.cs.washington.edu
+     User krzysd
