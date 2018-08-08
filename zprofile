@@ -1,5 +1,5 @@
 typeset -U path
-path=(~/progs/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools /usr/local/heroku/bin)
+path=(~/progs/bin ~/.local/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools /usr/local/heroku/bin ~/.rvm/bin)
 
 export EDITOR="/usr/bin/emacs"
 export EMAIL="krzysdrewniak@gmail.com"
@@ -12,7 +12,7 @@ umask 022
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # GPG-agent stuff
 # Move to .profile mutandis mutandis
