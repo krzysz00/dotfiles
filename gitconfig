@@ -10,3 +10,5 @@
 	enabled = true
 [core]
 	editor = emacsclient -a=\"\"
+[github]
+	user = krzysz00
