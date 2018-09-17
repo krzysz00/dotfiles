@@ -40,7 +40,7 @@ defaults =
                     ,("M-m", withFocused minimizeWindow)
                     ,("M-S-m", sendMessage RestoreNextMinimizedWin)
                     ,("M-p", spawn "dmenu_run -fn Inconsolata-16:normal")
---                    ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
---                    ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
+                    ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
+                    ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
 --                    ,("<XF86Display>", spawn "autorandr")
                     ]
