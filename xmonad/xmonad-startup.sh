@@ -4,7 +4,11 @@
 #trayer --transparent true --alpha 10 --tint 0x303030 --SetDockType true --SetPartialStrut true --height 24 &
 xsetroot -cursor_name left_ptr
 xscreensaver -no-splash &
-unity-settings-daemon &
+if [ -x $(command -v unity-settings-daemon) ]; then
+    unity-settings-daemon &
+else
+    gnome-settings-daemon &
+fi
 sleep 2
 # fbpanel &
 lxpanel &
