@@ -15,6 +15,9 @@ zstyle ':completion:*' cache-path ~/.config/zsh-cache
 autoload -Uz compinit
 compinit
 
+# From picking apart the init.zsh code
+test -r $HOME/.opam/opam-init/complete.zsh && . $HOME/.opam/opam-init/complete.zsh > /dev/null 2> /dev/null || true
+
 HISTFILE=~/.config/zsh-hist
 HISTSIZE=10000
 SAVEHIST=10000
@@ -46,9 +49,11 @@ precmd () { vcs_info }
 PS1="%B%F{yellow}%n@%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
 RPROMPT='${vcs_info_msg_0_}'
 
-trunk="$HOME/Programing/lisp/motm/trunk/"
-school="$HOME/Dropbox/fall-2017/"
-: ~trunk ~school
+alias csedir='sshfs tricycle.cs.washington.edu: $HOME/cse'
+alias csedir_down='fusermount -u $HOME/cse'
+
+school="$HOME/cse/autumn-2018/"
+: ~school
 
 alias e='emacsclient -a=""'
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
