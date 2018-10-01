@@ -53,7 +53,8 @@ alias csedir='sshfs tricycle.cs.washington.edu: $HOME/cse'
 alias csedir_down='fusermount -u $HOME/cse'
 
 school="$HOME/cse/autumn-2018/"
-: ~school
+ssd="/ssdhome/$USER/"
+: ~school ~ssd
 
 alias e='emacsclient -a=""'
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
