@@ -6,6 +6,7 @@ import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.Minimize
 import XMonad.Hooks.Minimize
+import XMonad.Config.Gnome (gnomeRegister)
 
 main =
 --   spawn "sh /home/krzys/.xmonad/xmonad-startup.sh"
@@ -33,10 +34,12 @@ defaults =
       , terminal = "gnome-terminal"
       , manageHook = myManageHook <+> manageHook def
       , layoutHook = minimize (Tall 1 (3/100) (1/2)) ||| layoutHook def
-      , handleEventHook = minimizeEventHook <+> handleEventHook def <+> fullscreenEventHook}
+      , handleEventHook = minimizeEventHook <+> handleEventHook def <+> fullscreenEventHook
+      , startupHook = gnomeRegister >> startupHook def }
   `additionalKeysP` [("M-C-S-q", spawn "systemctl suspend")
                     ,("M-C-q", spawn "dm-tool switch-to-greeter")
-                    ,("M-S-l", spawn "xscreensaver-command -lock")
+                    ,("M-S-q", spawn "gnome-session-quit --logout")
+                    ,("M-S-l", spawn "gnome-screensaver-command --lock")
                     ,("M-m", withFocused minimizeWindow)
                     ,("M-S-m", sendMessage RestoreNextMinimizedWin)
                     ,("M-p", spawn "dmenu_run -fn Inconsolata-16:normal")

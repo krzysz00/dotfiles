@@ -3,19 +3,17 @@
 #sleep 5
 #trayer --transparent true --alpha 10 --tint 0x303030 --SetDockType true --SetPartialStrut true --height 24 &
 xsetroot -cursor_name left_ptr
-xscreensaver -no-splash &
+# xscreensaver -no-splash &
 if [ -x $(command -v unity-settings-daemon) ]; then
     unity-settings-daemon &
 else
     gnome-settings-daemon &
 fi
-sleep 2
+# This is now being handled by gnome-panel, since we run in GNOME these days
 # fbpanel &
-lxpanel &
-killall gnome-screensaver
-sleep 3
-gnome-sound-applet &
-volumeicon &
+# lxpanel &
+# killall gnome-screensaver
+# volumeicon &
 dropbox start &
 nm-applet &
 redshift &
