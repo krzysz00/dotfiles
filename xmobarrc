@@ -3,6 +3,7 @@ Config { font = "xft:Inconsolata:size=16,style=Medium"
        , fgColor = "white"
        , position = Top
        , pickBroadest = True
+       , overrideRedirect = False
        , commands = [ Run Battery ["-t", "<acstatus> <timeleft> (<left>%)", "-L", "10", "-H", "90", "-l", "red", "-h", "green", "--", "-O", "<fc=green>Charging</fc>", "-o", "Battery"] 100
                     , Run MultiCpu ["-t", "<total>%", "-h", "red", "-H", "200"] 50
                     , Run StdinReader
