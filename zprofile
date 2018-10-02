@@ -1,5 +1,5 @@
 typeset -U path
-path=(~/progs/bin ~/.local/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools /usr/local/heroku/bin ~/.rvm/bin)
+path=(~/progs/bin ~/.local/bin ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools /usr/local/heroku/bin ~/.rvm/bin)
 
 export EDITOR="/usr/bin/emacs"
 export EMAIL="krzysdrewniak@gmail.com"
