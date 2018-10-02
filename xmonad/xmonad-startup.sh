@@ -13,7 +13,7 @@ fi
 # fbpanel &
 # lxpanel &
 # killall gnome-screensaver
-# volumeicon &
+volumeicon &
 dropbox start &
 nm-applet &
 redshift &
