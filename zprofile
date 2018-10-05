@@ -10,9 +10,10 @@ export PDFVIEWER=evince
 
 umask 022
 
+test -r $HOME/.opam/opam-init/variables.sh && . $HOME/.opam/opam-init/variables.sh > /dev/null 2> /dev/null || true
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-test -r $HOME/.opam/opam-init/variables.sh && . $HOME/.opam/opam-init/variables.sh > /dev/null 2> /dev/null || true
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # GPG-agent stuff
