@@ -21,5 +21,9 @@ Host gheith
      User git
      HostName cs429.com
      IdentityFile ~/.ssh/id_rsa_gheith
-Host *.cs.washington.edu
+Host bicycle
+     HostName bicycle.cs.washington.edu
+Host tricycle
+     HostName tricycle.cs.washington.edu
+Host *.cs.washington.edu bicycle tricycle
      User krzysd
