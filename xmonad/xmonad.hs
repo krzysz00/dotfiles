@@ -45,5 +45,6 @@ defaults =
                     ,("M-p", spawn "dmenu_run -fn Inconsolata-16:normal")
                     ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
                     ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
---                    ,("<XF86Display>", spawn "autorandr")
+                    ,("<XF86Display>", spawn "autorandr")
+                    ,("M-F8", spawn "autorandr")
                     ]
