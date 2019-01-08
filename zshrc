@@ -49,10 +49,10 @@ precmd () { vcs_info }
 PS1="%B%F{yellow}%n@%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
 RPROMPT='${vcs_info_msg_0_}'
 
-alias csedir='sshfs tricycle.cs.washington.edu: $HOME/cse'
+alias csedir='sshfs -o reconnect tricycle.cs.washington.edu: $HOME/cse'
 alias csedir_down='fusermount -u $HOME/cse'
 
-school="$HOME/cse/autumn-2018/"
+school="$HOME/cse/winter-2019/"
 ssd="/ssdhome/$USER/"
 : ~school ~ssd
 
