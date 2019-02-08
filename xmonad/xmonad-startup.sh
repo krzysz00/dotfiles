@@ -13,11 +13,11 @@ fi
 # fbpanel &
 # lxpanel &
 # killall gnome-screensaver
+
+/usr/lib/geoclue-2.0/demos/agent &
 volumeicon &
-dropbox start &
+# dropbox start &
 nm-applet &
-redshift &
-skypeforlinux &
 keepassxc &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
@@ -25,6 +25,9 @@ indicator-cpufreq &
 #fi
 
 $HOME/.fehbg
+
+sleep 1
+redshift &
 
 xmodmap -e "remove Lock = Caps_Lock"
 xmodmap -e "add Control = Caps_Lock"
