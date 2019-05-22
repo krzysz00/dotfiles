@@ -17,13 +17,11 @@ Host *.cs.utexas.edu
      ForwardX11Trusted yes
 Host *.tacc.utexas.edu
      User drewniak
-Host gheith
-     User git
-     HostName cs429.com
-     IdentityFile ~/.ssh/id_rsa_gheith
 Host bicycle
      HostName bicycle.cs.washington.edu
 Host tricycle
      HostName tricycle.cs.washington.edu
-Host *.cs.washington.edu bicycle tricycle
+Host kopis
+     HostName kopis.cs.washington.edu
+Host *.cs.washington.edu bicycle tricycle kopis
      User krzysd
