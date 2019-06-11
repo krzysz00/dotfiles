@@ -27,9 +27,14 @@ setopt prompt_subst
 
 bindkey -e
 
-eval "`dircolors -b`"
+if whence dircolors >/dev/null; then
+    eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+else
+    CLICOLOR=1
+fi
+
 eval "$(lesspipe)"
-alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 #alias ttyter='ttyter -readline -ansi -ssl -verify -vcheck -dostream'
 
