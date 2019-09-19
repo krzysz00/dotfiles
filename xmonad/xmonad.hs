@@ -4,6 +4,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Util.EZConfig
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Actions.Minimize
 import XMonad.Layout.Minimize
 import XMonad.Hooks.Minimize
 import XMonad.Config.Gnome (gnomeRegister)
@@ -41,8 +42,8 @@ defaults =
                     ,("M-S-q", spawn "gnome-session-quit --logout")
                     ,("M-S-l", spawn "gnome-screensaver-command --lock")
                     ,("M-m", withFocused minimizeWindow)
-                    ,("M-S-m", sendMessage RestoreNextMinimizedWin)
-                    ,("M-p", spawn "dmenu_run -fn Inconsolata-16:normal")
+                    ,("M-S-m", withLastMinimized maximizeWindowAndFocus)
+                    ,("M-p", spawn "dmenu_run -fn Inconsolata-18:normal")
                     ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
                     ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
                     ,("<XF86Display>", spawn "autorandr")
