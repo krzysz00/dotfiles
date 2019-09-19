@@ -43,7 +43,7 @@ defaults =
                     ,("M-S-l", spawn "gnome-screensaver-command --lock")
                     ,("M-m", withFocused minimizeWindow)
                     ,("M-S-m", withLastMinimized maximizeWindowAndFocus)
-                    ,("M-p", spawn "dmenu_run -fn Inconsolata-18:normal")
+                    ,("M-p", spawn "dmenu_run -fn Inconsolata-21:normal")
                     ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
                     ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
                     ,("<XF86Display>", spawn "autorandr")
