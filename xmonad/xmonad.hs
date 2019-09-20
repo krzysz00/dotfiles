@@ -7,13 +7,11 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Actions.Minimize
 import XMonad.Layout.Minimize
 import XMonad.Hooks.Minimize
+import XMonad.Util.SpawnOnce
 import XMonad.Config.Gnome (gnomeRegister)
 
 main =
---   spawn "sh /home/krzys/.xmonad/xmonad-startup.sh"
-  xmonad =<< statusBar xmobar' myPP toggleStrutsKey (ewmh defaults)
-
-xmobar' = "sh ~/.xmonad/xmonad-startup.sh"
+  xmonad =<< statusBar "xmobar" myPP toggleStrutsKey (ewmh defaults)
 
 myPP = xmobarPP { ppCurrent = \x -> "<fc=green>" ++ x ++ "</fc>"
                 , ppHidden = id
@@ -36,7 +34,8 @@ defaults =
       , manageHook = myManageHook <+> manageHook def
       , layoutHook = minimize (Tall 1 (3/100) (1/2)) ||| layoutHook def
       , handleEventHook = minimizeEventHook <+> handleEventHook def <+> fullscreenEventHook
-      , startupHook = gnomeRegister >> startupHook def }
+      , startupHook = gnomeRegister >> spawnOnce "~/.xmonad/xmonad-startup.sh"
+                      >> startupHook def }
   `additionalKeysP` [("M-C-S-q", spawn "systemctl suspend")
                     ,("M-C-q", spawn "dm-tool switch-to-greeter")
                     ,("M-S-q", spawn "gnome-session-quit --logout")
