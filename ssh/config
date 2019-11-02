@@ -23,8 +23,11 @@ Host tricycle
      HostName tricycle.cs.washington.edu
 Host kopis
      HostName kopis.cs.washington.edu
-Host *.cs.washington.edu bicycle tricycle kopis
+Host *.cs.washington.edu bicycle tricycle kopis bicycle_backup
      User krzysd
 Host plotprotectors.org
      User deploy
      Port 3463
+Host bicycle_backup
+     HostName bicycle.cs.washington.edu
+     IdentityFile ~/.ssh/id_ed25519_backups
