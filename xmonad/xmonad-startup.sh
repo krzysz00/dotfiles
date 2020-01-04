@@ -21,7 +21,7 @@ nm-applet &
 keepassxc &
 
 #if [[ `hostname` != "krzys-desktop" ]]; then
-indicator-cpufreq &
+#indicator-cpufreq &
 #fi
 
 # $HOME/.fehbg
