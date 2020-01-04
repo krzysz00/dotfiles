@@ -15,10 +15,3 @@ test -r $HOME/.opam/opam-init/variables.sh && . $HOME/.opam/opam-init/variables.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-# GPG-agent stuff
-# Move to .profile mutandis mutandis
-if [[ -f "$HOME/.gnupg/gpg-agent-info-$(hostname)" ]]; then
-    source "$HOME/.gnupg/gpg-agent-info-$(hostname)"
-    export GPG_AGENT_INFO
-fi

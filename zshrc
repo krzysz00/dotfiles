@@ -57,7 +57,7 @@ RPROMPT='${vcs_info_msg_0_}'
 alias csedir='sshfs -o reconnect tricycle.cs.washington.edu: $HOME/cse'
 alias csedir_down='fusermount -u $HOME/cse'
 
-school="$HOME/Documents/autumn-2019/"
+school="$HOME/Documents/winter-2020/"
 ssd="/ssdhome/$USER/"
 : ~school ~ssd
 
@@ -66,6 +66,3 @@ alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
 if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-256color"
 fi
-
-GPG_TTY=$(tty)
-export GPG_TTY
