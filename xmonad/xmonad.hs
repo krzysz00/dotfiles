@@ -63,8 +63,4 @@ defaults =
                     ,("M-S-m", withLastMinimized maximizeWindowAndFocus)
                     ,("M-b", sendMessage ToggleStruts)
                     ,("M-p", spawn "dmenu_run -fn Inconsolata-21:normal")
-                    ,("<XF86MonBrightnessUp>", spawn "xbacklight -inc 10")
-                    ,("<XF86MonBrightnessDown>", spawn "xbacklight -dec 10")
-                    ,("<XF86Display>", spawn "autorandr")
-                    ,("M-F8", spawn "autorandr")
                     ]
