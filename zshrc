@@ -66,3 +66,9 @@ alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
 if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-256color"
 fi
+
+if [[ -s "$rvm_path/scripts/rvm" ]]; then
+    source "$rvm_path/scripts/rvm"
+elif [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+     source "$HOME/.rvm/scripts/rvm"
+fi
