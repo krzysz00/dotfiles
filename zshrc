@@ -57,7 +57,7 @@ RPROMPT='${vcs_info_msg_0_}'
 alias csedir='sshfs -o reconnect tricycle.cs.washington.edu: $HOME/cse'
 alias csedir_down='fusermount -u $HOME/cse'
 
-school="$HOME/Documents/winter-2020/"
+school="$HOME/Dropbox/spring-2020/"
 ssd="/ssdhome/$USER/"
 : ~school ~ssd
 
