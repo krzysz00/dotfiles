@@ -31,3 +31,7 @@ Host plotprotectors.org
 Host bicycle_backup
      HostName bicycle.cs.washington.edu
      IdentityFile ~/.ssh/id_ed25519_backups
+Host grading_repo
+     HostName bitbucket.org
+     User git
+     IdentityFile ~/.ssh/id_rsa
