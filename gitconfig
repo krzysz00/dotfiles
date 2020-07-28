@@ -12,3 +12,5 @@
 	editor = emacsclient -a=\"\"
 [github]
 	user = krzysz00
+[init]
+	defaultBranch = main
