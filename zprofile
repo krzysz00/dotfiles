@@ -10,6 +10,8 @@ export ANDROID_HOME="$HOME/progs/android/android"
 export GOPATH="$HOME/Programming/go"
 export PDFVIEWER=evince
 
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
+
 umask 022
 
 test -r $HOME/.opam/opam-init/variables.sh && . $HOME/.opam/opam-init/variables.sh > /dev/null 2> /dev/null || true
