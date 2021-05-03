@@ -62,5 +62,5 @@ defaults =
                     ,("M-m", withFocused minimizeWindow)
                     ,("M-S-m", withLastMinimized maximizeWindowAndFocus)
                     ,("M-b", sendMessage ToggleStruts)
-                    ,("M-p", spawn "dmenu_run -fn Inconsolata-21:normal")
+                    ,("M-p", spawn "dmenu_run -fn Inconsolata-12:normal")
                     ]
