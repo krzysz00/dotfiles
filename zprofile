@@ -10,7 +10,9 @@ export ANDROID_HOME="$HOME/progs/android/android"
 export GOPATH="$HOME/Programming/go"
 export PDFVIEWER=evince
 
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
+if command -v rustc >&/dev/null 2>&1; then
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
+fi
 
 umask 022
 
