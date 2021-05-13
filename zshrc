@@ -68,6 +68,7 @@ ssd="/ssdhome/$USER/"
 : ~school ~ssd
 
 alias e='emacsclient -a=""'
+alias remacs="eval \$(tmux showenv -s DISPLAY); emacsclient -c"
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
 if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-256color"
