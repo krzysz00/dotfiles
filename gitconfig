@@ -14,3 +14,5 @@
 	user = krzysz00
 [init]
 	defaultBranch = main
+[pull]
+	rebase = false
