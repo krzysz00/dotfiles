@@ -52,7 +52,13 @@ precmd () { vcs_info }
 
 ##prompt
 PS1="%B%F{yellow}%n@%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
-RPROMPT='${vcs_info_msg_0_}'
+if [[ "$TERM" != eterm* ]]; then
+    RPROMPT='${vcs_info_msg_0_}'
+fi
+
+if [[ "$TERM" == eterm-256color ]]; then
+   PS1="\${vcs_info_msg_0_}$PS1"
+fi
 
 alias csedir='sshfs -o reconnect tricycle.cs.washington.edu: $HOME/cse'
 alias csedir_down='fusermount -u $HOME/cse'
