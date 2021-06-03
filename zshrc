@@ -30,7 +30,7 @@ bindkey -e
 if whence dircolors >/dev/null; then
     eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-else
+elif [[ "$TERM" != "dumb" ]]; then
     CLICOLOR=1
 fi
 
@@ -76,5 +76,9 @@ fi
 if [[ -s "$rvm_path/scripts/rvm" ]]; then
     source "$rvm_path/scripts/rvm"
 elif [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-     source "$HOME/.rvm/scripts/rvm"
+    source "$HOME/.rvm/scripts/rvm"
+fi
+
+if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
+    eval "$(keychain --eval --quiet)"
 fi
