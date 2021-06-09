@@ -22,4 +22,5 @@ if command -v pyenv >/dev/null 2>&1; then
     eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
 fi
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export USER_ZPROFILE_IN_EFFECT=1

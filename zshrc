@@ -1,4 +1,6 @@
-source $HOME/.zprofile
+if [[ "$USER_ZPROFILE_IN_EFFECT" != 1 ]]; then
+    source $HOME/.zprofile
+fi
 
 zstyle ':completion:*' auto-description 'arg is %d'
 zstyle ':completion:*' completer _complete _ignored _correct _approximate _prefix
