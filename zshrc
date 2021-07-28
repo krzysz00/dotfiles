@@ -1,4 +1,6 @@
-source $HOME/.zprofile
+if [[ "$USER_ZPROFILE_IN_EFFECT" != 1 ]]; then
+    source $HOME/.zprofile
+fi
 
 zstyle ':completion:*' auto-description 'arg is %d'
 zstyle ':completion:*' completer _complete _ignored _correct _approximate _prefix
@@ -80,6 +82,14 @@ elif [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
     source "$HOME/.rvm/scripts/rvm"
 fi
 
+if command -v pyenv &>/dev/null; then
+    eval "$(pyenv init -)"
+fi
+
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
     eval "$(keychain --eval --quiet)"
+fi
+
+if [[ -v WSL_DISTRO_NAME ]] && [[ -v DISPLAY ]] && [[ -f ~/.Xresources ]]; then
+    xrdb -merge ~/.Xresources
 fi

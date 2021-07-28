@@ -19,7 +19,8 @@ umask 022
 test -r $HOME/.opam/opam-init/variables.sh && . $HOME/.opam/opam-init/variables.sh > /dev/null 2> /dev/null || true
 
 if command -v pyenv >/dev/null 2>&1; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
 fi
-# PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export USER_ZPROFILE_IN_EFFECT=1
