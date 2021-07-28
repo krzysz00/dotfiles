@@ -35,3 +35,10 @@ Host grading_repo
      HostName bitbucket.org
      User git
      IdentityFile ~/.ssh/id_rsa
+Host dev devshell
+     HostName 10.216.64.100
+     Port 30039
+     User kdrewnia
+Host devshell
+     RemoteCommand docker-compose exec mlir_dev tmux -2 attach
+     RequestTTY force
