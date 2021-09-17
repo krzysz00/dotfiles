@@ -62,12 +62,8 @@ if [[ "$TERM" == eterm-256color ]]; then
    PS1="\${vcs_info_msg_0_}$PS1"
 fi
 
-alias csedir='sshfs -o reconnect tricycle.cs.washington.edu: $HOME/cse'
-alias csedir_down='fusermount -u $HOME/cse'
-
-school="$HOME/Dropbox/spring-2020/"
 ssd="/ssdhome/$USER/"
-: ~school ~ssd
+: ~ssd
 
 alias e='emacsclient -a=""'
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
@@ -75,14 +71,12 @@ if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-256color"
 fi
 
-if [[ -s "$rvm_path/scripts/rvm" ]]; then
-    source "$rvm_path/scripts/rvm"
-elif [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-    source "$HOME/.rvm/scripts/rvm"
-fi
-
 if command -v pyenv &>/dev/null; then
     eval "$(pyenv init -)"
+fi
+
+if command -v rbenv &>/dev/null; then
+    eval "$(rbenv init - zsh)"
 fi
 
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then

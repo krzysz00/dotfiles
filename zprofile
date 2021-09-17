@@ -1,7 +1,7 @@
 export PYENV_ROOT=$(realpath $HOME/.pyenv)
-RVM_ROOT=$(realpath $HOME/.rvm)
+RBENV_ROOT=$(realpath $HOME/.rbenv)
 typeset -U path
-path=(~/progs/bin ~/.local/bin ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools $RVM_ROOT/bin $PYENV_ROOT/bin)
+path=(~/progs/bin ~/.local/bin $RBENV_ROOT/bin $PYENV_ROOT/bin ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools)
 
 export EDITOR="/usr/bin/emacsclient"
 export EMAIL="krzysdrewniak@gmail.com"
