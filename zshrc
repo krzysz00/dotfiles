@@ -79,6 +79,12 @@ if command -v rbenv &>/dev/null; then
     eval "$(rbenv init - zsh)"
 fi
 
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+    source $NVM_DIR/nvm.sh
+    source $NVM_DIR/bash_completion
+fi
+
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
