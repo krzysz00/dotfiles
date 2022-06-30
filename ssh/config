@@ -42,3 +42,23 @@ Host dev devshell
 Host devshell
      RemoteCommand docker-compose exec mlir_dev tmux -2 attach
      RequestTTY force
+
+# Lockhart
+Host lockhart
+  HostName 10.216.108.2
+Host lockhart-admin
+  HostName 10.216.108.4
+
+Host lockhart5 lockhart6 lockhart7 lockhart5shell
+  ProxyJump lockhart
+
+Host lockhart5 lockhart5shell
+  HostName x1000c1s7b0n0
+Host lockhart5shell
+  RemoteCommand docker-compose exec mlir_dev tmux -2 attach
+  RequestTTY force
+
+Host lockhart6
+  HostName x1000c1s4b1n0
+Host lockhart7
+  HostName x1000c7s2b1n0
