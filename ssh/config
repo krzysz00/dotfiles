@@ -1,3 +1,4 @@
+AddKeysToAgent yes
 Host cse01
      HostName cse01.cse.unt.edu
      User kd0136
