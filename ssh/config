@@ -63,3 +63,8 @@ Host lockhart6
   HostName x1000c1s4b1n0
 Host lockhart7
   HostName x1000c7s2b1n0
+
+Host gerritgit
+  HostName git.amd.com
+  User kdrewnia
+  Port 29418
