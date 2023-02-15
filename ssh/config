@@ -44,25 +44,42 @@ Host devshell
      RemoteCommand docker-compose exec mlir_dev tmux -2 attach
      RequestTTY force
 
+Host kdrewnia-desk desk deskshell
+  HostName kdrewnia-desk
+  User kdrewnia
+Host deskshell
+  RemoteCommand tmux -2 attach
+  RequestTTY force
+
 # Lockhart
 Host lockhart
   HostName 10.216.108.2
+  User kdrewnia
 Host lockhart-admin
   HostName 10.216.108.4
+  User kdrewnia
+Host lockhart-login3
+  HostName 10.216.108.5
+  User kdrewnia
 
-Host lockhart5 lockhart6 lockhart7 lockhart5shell
+Host lockhart4 lockhart5 lockhart6 lockhart7 lockhart8 lockhart4shell lockhart5shell lockhart6shell lockhart7shell lockhart8shell
   ProxyJump lockhart
+  User kdrewnia
 
+Host lockhart4 lockhart4shell
+  HostName x1001c3s0b0n0
 Host lockhart5 lockhart5shell
-  HostName x1000c1s7b0n0
-Host lockhart5shell
+  HostName x1001c3s0b1n0
+Host lockhart6 lockhart6shell
+  HostName x1001c3s1b0n0
+Host lockhart7 lockhart7shell
+  HostName x1001c3s1b1n0
+Host lockhart8 lockhart8shell
+  HostName x1001c3s3b0n0
+
+Host lockhart4shell lockhart5shell lockhart6shell lockhart7shell lockhart8shell
   RemoteCommand docker-compose exec mlir_dev tmux -2 attach
   RequestTTY force
-
-Host lockhart6
-  HostName x1000c1s4b1n0
-Host lockhart7
-  HostName x1000c7s2b1n0
 
 Host gerritgit
   HostName git.amd.com
