@@ -32,10 +32,10 @@ Host plotprotectors.org
 Host bicycle_backup
      HostName bicycle.cs.washington.edu
      IdentityFile ~/.ssh/id_ed25519_backups
-Host grading_repo
-     HostName bitbucket.org
-     User git
-     IdentityFile ~/.ssh/id_rsa
+Host rsync.net
+     HostName de2468.rsync.net
+     User de2468
+
 Host dev devshell
      HostName 10.216.64.100
      Port 30039
