@@ -1,8 +1,6 @@
 /load ~/.passwords.tf
 #put into passwords.tf
 #/addworld -Tlp aardwolf espol PW_HERE aardwolf.org 23
-#/addworld -Tlp discworld espol PW_HERE  discworld.atuin.net 23
-#/addworld -Tlp coders espol PW_HERE coders.ackmud.net 4444
 #/addworld -x postfurry Tomash PW_HERE muck.postfurry.net 5555
 /load kb-emacs.tf
 
