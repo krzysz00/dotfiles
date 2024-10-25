@@ -1,5 +1,7 @@
+/set default_charset=utf-8
 /load ~/.passwords.tf
 #put into passwords.tf
+#/addworld -x post-self Tomash PW_HERE muck.post-self.ink 4201
 #/addworld -Tlp aardwolf espol PW_HERE aardwolf.org 23
 #/addworld -x postfurry Tomash PW_HERE muck.postfurry.net 5555
 /load kb-emacs.tf
