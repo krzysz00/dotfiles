@@ -3,7 +3,7 @@ RBENV_ROOT=$(realpath $HOME/.rbenv)
 typeset -U path
 path=(~/progs/bin ~/.local/bin $RBENV_ROOT/bin $PYENV_ROOT/bin ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools)
 
-export EDITOR="/usr/bin/emacsclient"
+export EDITOR="emacsclient"
 export EMAIL="krzysdrewniak@gmail.com"
 export ANDROID_HOME="$HOME/progs/android/android"
 
