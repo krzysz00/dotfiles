@@ -7,6 +7,8 @@ Host cao
      User joshua
      IdentityFile ~/.ssh/cao_key
      Compression yes
+     PubkeyAcceptedKeyTypes=+ssh-rsa
+     HostKeyAlgorithms=+ssh-rsa
 Host cdo
      User crawl
      HostName crawl.develz.org
