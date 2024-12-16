@@ -87,3 +87,10 @@ Host gerritgit
   HostName git.amd.com
   User kdrewnia
   Port 29418
+
+Host sharkmi300x-3 sharkmi300x-3shell
+  HostName 10.23.233.163
+  User kdrewnia
+Host sharkmi300x-3shell
+  RemoteCommand tmux -2 attach
+  RequestTTY force
