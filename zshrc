@@ -53,7 +53,15 @@ zstyle ':vcs_info:git*' check-for-changes true
 precmd () { vcs_info }
 
 ##prompt
-PS1="%B%F{yellow}%n@%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
+function {
+    local username=$(id -u -n)
+    local user_part="%n@"
+    if [[ "$username" == "krzys" || "$username" == "kdrewnia" ]]; then
+        user_part=""
+    fi
+    PS1="%B%F{yellow}${user_part}%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
+}
+
 if [[ "$TERM" != eterm* ]]; then
     RPROMPT='${vcs_info_msg_0_}'
 fi
@@ -61,9 +69,6 @@ fi
 if [[ "$TERM" == eterm-256color ]]; then
    PS1="\${vcs_info_msg_0_}$PS1"
 fi
-
-ssd="/ssdhome/$USER/"
-: ~ssd
 
 alias e='emacsclient -a=""'
 alias remacs="eval \$(tmux showenv -s DISPLAY); emacsclient -c"
