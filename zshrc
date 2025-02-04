@@ -93,3 +93,5 @@ fi
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
+
+export GPG_TTY=$(tty)
