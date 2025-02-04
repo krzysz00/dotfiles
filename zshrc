@@ -94,7 +94,3 @@ fi
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
-
-if [[ -v WSL_DISTRO_NAME ]] && [[ -v DISPLAY ]] && [[ -f ~/.Xresources ]]; then
-    xrdb -merge ~/.Xresources
-fi
