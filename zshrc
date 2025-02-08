@@ -73,7 +73,7 @@ fi
 alias e='emacsclient -a=""'
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
 if [[ $TERM = "xterm" ]]; then
-    export TERM="xterm-256color"
+    export TERM="xterm-direct"
 fi
 
 if command -v pyenv &>/dev/null; then
