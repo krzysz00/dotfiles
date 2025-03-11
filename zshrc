@@ -21,8 +21,8 @@ compinit
 test -r $HOME/.opam/opam-init/complete.zsh && . $HOME/.opam/opam-init/complete.zsh > /dev/null 2> /dev/null || true
 
 HISTFILE=~/.config/zsh-hist
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt autocd beep extendedglob correct dvorak inc_append_history
 setopt sharehistory hist_ignore_dups hist_expire_dups_first hist_save_no_dups
 setopt prompt_subst
