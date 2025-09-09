@@ -99,9 +99,9 @@ Host shark-bastion
   User nod
   HostName 149.199.62.117
 
-Host shark-rdna3
+Host shark23
   User kdrewnia
-  HostName 10.23.232.227
-  #HostName 10.23.239.8
-  #ProxyJump shark-bastion
+  #HostName 10.23.232.227
+  HostName 10.23.239.8
+  ProxyJump shark-bastion
   ForwardAgent yes
