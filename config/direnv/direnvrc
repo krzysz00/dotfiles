@@ -33,7 +33,7 @@ use_iree() {
   fi
   local REPLY
   realpath.absolute "$1"
-  direnv_layout_dir="$REPLY"
+  direnv_layout_dir="$REPLY/.direnv"
   layout python "${3:-python3}"
   PATH_add "$2/tools"
 }
