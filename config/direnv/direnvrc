@@ -1,0 +1,39 @@
+# use ruby [version] [gemset]
+use_ruby() {
+  local ver=$1
+  if [[ -z $ver ]] && [[ -f .ruby-version ]]; then
+    ver=$(cat .ruby-version)
+  fi
+  if [[ -z $ver ]]; then
+    log_error Unknown ruby version
+    exit 1
+  fi
+  local rubies_path=$HOME/.rbenv/versions
+  if ! [[ -d $rubies_path/$ver ]]; then
+     loc_error Ruby version $ver not installed
+     exit 1
+  fi
+  load_prefix $rubies_path/$ver
+
+  local gemsets_path=$HOME/.cache/gemsets
+  local gemset=$2
+  if [[ -z $gemset ]] && [[ -f .ruby-gemset ]]; then
+    gemset=$(cat .ruby-gemset)
+  fi
+  if [[ -d $gemsets_path ]] && [[ -n $gemset ]]; then
+     direnv_layout_dir=$gemsets_path/ruby-$ver-$gemset
+  fi
+  layout ruby
+}
+
+# Usage: use iree iree_source_dir iree_build_dir [python path]
+use_iree() {
+  if [[ $# != 2 && $# != 3 ]]; then
+     log_error Usage: use iree iree_source_dir iree_build_dir [python path]
+  fi
+  local REPLY
+  realpath.absolute "$1"
+  direnv_layout_dir="$REPLY"
+  layout python "${3:-python3}"
+  PATH_add "$2/tools"
+}

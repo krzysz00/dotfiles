@@ -76,22 +76,12 @@ if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-direct"
 fi
 
-if command -v pyenv &>/dev/null; then
-    eval "$(pyenv init -)"
-fi
-
-if command -v rbenv &>/dev/null; then
-    eval "$(rbenv init - zsh)"
-fi
-
-export NVM_DIR="$HOME/.nvm"
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-    source $NVM_DIR/nvm.sh
-    source $NVM_DIR/bash_completion
-fi
-
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
 
 export GPG_TTY=$(tty)
+
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi

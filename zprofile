@@ -5,9 +5,7 @@ path=(~/progs/bin ~/.local/bin $RBENV_ROOT/bin $PYENV_ROOT/bin ~/.cargo/bin $pat
 
 export EDITOR="emacsclient"
 export EMAIL="krzysdrewniak@gmail.com"
-export ANDROID_HOME="$HOME/progs/android/android"
 
-export GOPATH="$HOME/Programming/go"
 export PDFVIEWER=evince
 
 if command -v rustc >&/dev/null 2>&1; then
@@ -15,12 +13,5 @@ if command -v rustc >&/dev/null 2>&1; then
 fi
 
 umask 022
-
-test -r $HOME/.opam/opam-init/variables.sh && . $HOME/.opam/opam-init/variables.sh > /dev/null 2> /dev/null || true
-
-if command -v pyenv >/dev/null 2>&1; then
-    eval "$(pyenv init --path)"
-    eval "$(pyenv virtualenv-init -)"
-fi
 
 export USER_ZPROFILE_IN_EFFECT=1
