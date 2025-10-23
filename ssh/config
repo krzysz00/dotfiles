@@ -95,6 +95,13 @@ Host sharkmi300x-3shell
   RemoteCommand tmux -2 attach
   RequestTTY force
 
+Host sharkmi300x-4 sharkmi300x-4shell
+  HostName 172.19.24.15
+  User kdrewnia
+Host sharkmi300x-4shell
+  RemoteCommand tmux -2 attach
+  RequestTTY force
+
 Host shark-bastion
   User nod
   HostName 149.199.62.117
