@@ -16,6 +16,8 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.config/zsh-cache
 autoload -Uz compinit
 compinit
+autoload -Uz bashcompinit
+bashcompinit
 
 # From picking apart the init.zsh code
 test -r $HOME/.opam/opam-init/complete.zsh && . $HOME/.opam/opam-init/complete.zsh > /dev/null 2> /dev/null || true
@@ -85,4 +87,10 @@ export GPG_TTY=$(tty)
 
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+    source $NVM_DIR/nvm.sh
+    source $NVM_DIR/bash_completion
 fi
