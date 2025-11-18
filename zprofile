@@ -12,6 +12,14 @@ if [[ -d "$THEROCK_ROOT" ]]; then
 fi
 export LD_LIBRARY_PATH
 
+if [[ -f "$HOME/.amd-llm-api-token" ]]; then
+   export AMD_LLM_API_TOKEN="$(cat "$HOME/.amd-llm-api-token")"
+   export ANTHROPIC_API_KEY="dummy"
+   export ANTHROPIC_BASE_URL="https://llm-api.amd.com/Anthropic"
+   export ANTHROPIC_CUSTOM_HEADERS="Ocp-Apim-Subscription-Key: ${AMD_LLM_API_TOKEN}"
+   export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
+fi
+
 export EDITOR="emacsclient"
 export EMAIL="krzysdrewniak@gmail.com"
 
