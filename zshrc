@@ -75,6 +75,7 @@ fi
 alias e='emacsclient -a=""'
 alias remacs="eval \$(tmux showenv -s DISPLAY); emacsclient -c"
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
+alias llcmake='cmake -S llvm'
 if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-direct"
 fi
