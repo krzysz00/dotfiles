@@ -1,6 +1,6 @@
 export PYENV_ROOT="$(realpath $HOME/.pyenv)"
 RBENV_ROOT="$(realpath $HOME/.rbenv)"
-THEROCK_ROOT="$(realpath $HOME/therock-nightly/install)"
+THEROCK_ROOT="$(realpath $HOME/therock-nightly/install 2>&/dev/null)"
 typeset -U PATH path
 path=(~/progs/bin ~/.local/bin ~/amd-scripts/bin $THEROCK_ROOT/bin $RBENV_ROOT/bin $PYENV_ROOT/bin ~/therock-build/install/bin ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools)
 
