@@ -16,13 +16,15 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.config/zsh-cache
 autoload -Uz compinit
 compinit
+autoload -Uz bashcompinit
+bashcompinit
 
 # From picking apart the init.zsh code
 test -r $HOME/.opam/opam-init/complete.zsh && . $HOME/.opam/opam-init/complete.zsh > /dev/null 2> /dev/null || true
 
 HISTFILE=~/.config/zsh-hist
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt autocd beep extendedglob correct dvorak inc_append_history
 setopt sharehistory hist_ignore_dups hist_expire_dups_first hist_save_no_dups
 setopt prompt_subst
@@ -62,6 +64,73 @@ function {
     PS1="%B%F{yellow}${user_part}%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
 }
 
+# Directory alias factory
+# Usage: [prefix] [suffix] [short name] [desc] [zsh mode] [zsh input]
+# Note: no trailing / on prefix or suffix
+kd__alias_branched_directory_factory() {
+    emulate -L zsh
+    setopt extendedglob
+    local -a match mbegin mend
+    local prefix="$1"
+    local suffix="$2"
+    local abbrev="$3"
+    local desc="$4"
+    shift 4
+    if [[ $1 = d ]]; then
+        if [[ $2 = (#b)($prefix/)([^/]##)/($suffix)(/*|) ]]; then
+            typeset -ga reply
+            reply=($abbrev:$match[2] $(( ${mend[3]} - ${mbegin[1]} + 1 )))
+        else
+            return 1
+        fi
+    elif [[ $1 = n ]]; then
+        [[ $2 != (#b)($abbrev:(?*)) ]] && return 1
+        typeset -ga reply
+        reply=($prefix/$match[2]/$suffix)
+    elif [[ $1 = c ]]; then
+        local exp1
+        local -a dirs
+        dirs=($prefix/*/$suffix(/:s@$suffix@@:t))
+        dirs=(${abbrev}:${^dirs})
+        _wanted dynamic-dirs exp1 "dynamic $desc directory" compadd -S\] -a dirs
+        return
+    else
+        return 1
+    fi
+    return 0
+}
+
+kd__alias_iree_compiler() {
+    kd__alias_branched_directory_factory "$HOME/iree" "src/compiler/src/iree/compiler" "ic" "IREE compiler source" "$1" "$2"
+}
+kd__alias_iree_source() {
+    kd__alias_branched_directory_factory "$HOME/iree" "src" "is" "IREE source tree" "$1" "$2"
+}
+kd__alias_iree_build() {
+    kd__alias_branched_directory_factory "$HOME/iree" "build" "ib" "IREE build tree" "$1" "$2"
+}
+kd__alias_llvm_source() {
+    kd__alias_branched_directory_factory "$HOME/llvm" "src" "ls" "LLVM source tree" "$1" "$2"
+}
+kd__alias_llvm_build() {
+    kd__alias_branched_directory_factory "$HOME/llvm" "build" "lb" "LLVM build tree" "$1" "$2"
+}
+
+typeset -a zsh_directory_name_functions
+if [[ -d "$HOME/iree/main/src" ]]; then
+    zsh_directory_name_functions+=(kd__alias_iree_compiler kd__alias_iree_source)
+fi
+if [[ -d "$HOME/iree/main/build" ]]; then
+    zsh_directory_name_functions+=kd__alias_iree_build
+fi
+if [[ -d "$HOME/llvm/main/src" ]]; then
+    zsh_directory_name_functions+=kd__alias_llvm_source
+fi
+if [[ -d "$HOME/llvm/main/build" ]]; then
+    zsh_directory_name_functions+=kd__alias_llvm_build
+fi
+
+
 if [[ "$TERM" != eterm* ]]; then
     RPROMPT='${vcs_info_msg_0_}'
 fi
@@ -72,6 +141,10 @@ fi
 
 alias e='emacsclient -a=""'
 alias linelength='awk "length > 80 {print FILENAME \"(\" FNR \"): \" \$0}"'
+function llcmake() {
+    pushd llvm && { cmake "$@" ; popd; }
+}
+
 if [[ $TERM = "xterm" ]]; then
     export TERM="xterm-direct"
 fi
@@ -84,4 +157,10 @@ export GPG_TTY=$(tty)
 
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "$NVM_DIR/nvm.sh" ]]; then
+    source $NVM_DIR/nvm.sh
+    source $NVM_DIR/bash_completion
 fi
