@@ -1,0 +1,7 @@
+kind: SwitchConfig
+version: v1alpha1
+kubeconfigStores:
+- kind: filesystem
+  kubeconfigName: "*.conf"
+  paths:
+  - ~/.kube/configs/
