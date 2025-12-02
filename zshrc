@@ -165,3 +165,7 @@ if [[ -s "$NVM_DIR/nvm.sh" ]]; then
     source $NVM_DIR/nvm.sh
     source $NVM_DIR/bash_completion
 fi
+
+if command -v switcher &>/dev/null; then
+    source <(switcher init zsh | sed -e 's/function swtch/function kubeswitch/')
+fi
