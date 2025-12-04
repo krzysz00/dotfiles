@@ -14,6 +14,11 @@ zstyle ':completion:*' prompt 'Corrected input (found %e errors)'
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.config/zsh-cache
+
+if [[ -d ~/amd-scripts/completions ]]; then
+    fpath+=(~/amd-scripts/completions)
+fi
+
 autoload -Uz compinit
 compinit
 autoload -Uz bashcompinit
