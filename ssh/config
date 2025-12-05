@@ -28,7 +28,7 @@ Host kopis
      HostName kopis.cs.washington.edu
 Host *.cs.washington.edu bicycle tricycle kopis bicycle_backup
      User krzysd
-Host plotprotectors.org
+Host direct.plotprotectors.org
      User deploy
      Port 3463
 Host bicycle_backup
