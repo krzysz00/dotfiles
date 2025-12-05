@@ -1,7 +1,8 @@
 export PYENV_ROOT="$(realpath $HOME/.pyenv)"
 RBENV_ROOT="$(realpath $HOME/.rbenv)"
+THEROCK_ROOT="$HOME/therock-nightly/install"
 typeset -U PATH path
-path=(~/progs/bin ~/.local/bin ~/amd-scripts/bin $RBENV_ROOT/bin $PYENV_ROOT/bin ~/therock-build/install/bin ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools)
+path=(~/progs/bin ~/.local/bin ~/amd-scripts/bin $RBENV_ROOT/bin $PYENV_ROOT/bin $THEROCK_ROOT/bin  ~/.cargo/bin $path ~/progs/android/android/tools ~/progs/android/android/platform-tools)
 
 export EDITOR="emacsclient"
 export EMAIL="krzysdrewniak@gmail.com"
