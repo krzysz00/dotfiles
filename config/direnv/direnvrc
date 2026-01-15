@@ -50,6 +50,9 @@ use_iree() {
   layout python "${python_ver}"
 
   realpath.absolute "$build_dir"
-  PATH_add "$REPLY/tools"
+  local abs_build_dir="$REPLY"
+  PATH_add "$abs_build_dir/tools"
   export IREE_BUILD_DIRECTORY="$REPLY"
+  path_add PYTHONPATH "$abs_build_dir/runtime/binidngs/python"
+  path_add PYTHONPATH "$abs_build_dir/compiler/bindings/python"
 }
