@@ -47,7 +47,12 @@ use_iree() {
   local REPLY
   realpath.absolute "$project_root"
   direnv_layout_dir="$REPLY/.direnv"
-  layout python "${python_ver}"
+  local venv_path="$(direnv_layout_dir)/python-uv"
+  if [[ ! -d $(direnv_layout_dir)/uv-venv ]]; then
+      uv venv --python "${python_ver} ${venv_path}"
+  fi
+  export VIRTUAL_ENV="${venv_path}"
+  PATH_add "${venv_path}/bin"
 
   realpath.absolute "$build_dir"
   local abs_build_dir="$REPLY"
