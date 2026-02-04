@@ -26,6 +26,19 @@ use_ruby() {
   layout ruby
 }
 
+# Usage: layout uv [python_version]
+# Creates a uv-managed virtual environment at .direnv/python-uv-$python_version
+# The python version defaults to python3
+layout_uv() {
+  local python="${1:-python3}"
+  VIRTUAL_ENV="$(direnv_layout_dir)/python-uv-${python}"
+  if [[ ! -d "$VIRTUAL_ENV" ]]; then
+     uv venv --python "$python" "$VIRTUAL_ENV"
+  fi
+  export VIRTUAL_ENV
+  PATH_add "$VIRTUAL_ENV/bin"
+}
+
 # Usage: use iree iree_project_root iree_build_dir [python path] [iree_src_dir]
 # iree_source_dir defaults to the project root or [project root]/src, depending
 # on where tools/utils is found.
@@ -47,9 +60,12 @@ use_iree() {
   local REPLY
   realpath.absolute "$project_root"
   direnv_layout_dir="$REPLY/.direnv"
-  layout python "${python_ver}"
+  layout uv "$python_ver"
 
   realpath.absolute "$build_dir"
-  PATH_add "$REPLY/tools"
+  local abs_build_dir="$REPLY"
+  PATH_add "$abs_build_dir/tools"
   export IREE_BUILD_DIRECTORY="$REPLY"
+  path_add PYTHONPATH "$abs_build_dir/runtime/binidngs/python"
+  path_add PYTHONPATH "$abs_build_dir/compiler/bindings/python"
 }
