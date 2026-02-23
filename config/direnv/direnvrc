@@ -51,9 +51,14 @@ use_iree() {
   local python_ver="${3:-python3}"
   local source_dir_default="$1"
   # TODO: update this to detect tools/utils once it exists
+  # This is old-style
   if [[ ! -d "${source_dir_default}/compiler" && -d "${source_dir_default}/src/compiler" ]]; then
       source_dir_default="${source_dir_default}/src"
   fi
+  if [[ ! -d "${source_dir_default}/compiler" && -d "${source_dir_default}/iree/compiler" ]]; then
+      source_dir_default="${source_dir_default}/iree"
+  fi
+
   local source_dir="${4:-${source_dir_default}}"
   PATH_add "${source_dir}/tools/utils/bin"
 
