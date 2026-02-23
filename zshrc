@@ -106,29 +106,29 @@ kd__alias_branched_directory_factory() {
 }
 
 kd__alias_iree_compiler() {
-    kd__alias_branched_directory_factory "$HOME/iree" "src/compiler/src/iree/compiler" "ic" "IREE compiler source" "$1" "$2"
+    kd__alias_branched_directory_factory "$HOME/iree" "iree/compiler/src/iree/compiler" "ic" "IREE compiler source" "$1" "$2"
 }
 kd__alias_iree_source() {
-    kd__alias_branched_directory_factory "$HOME/iree" "src" "is" "IREE source tree" "$1" "$2"
+    kd__alias_branched_directory_factory "$HOME/iree" "iree" "is" "IREE source tree" "$1" "$2"
 }
 kd__alias_iree_build() {
     kd__alias_branched_directory_factory "$HOME/iree" "build" "ib" "IREE build tree" "$1" "$2"
 }
 kd__alias_llvm_source() {
-    kd__alias_branched_directory_factory "$HOME/llvm" "src" "ls" "LLVM source tree" "$1" "$2"
+    kd__alias_branched_directory_factory "$HOME/llvm" "llvm-project" "ls" "LLVM source tree" "$1" "$2"
 }
 kd__alias_llvm_build() {
     kd__alias_branched_directory_factory "$HOME/llvm" "build" "lb" "LLVM build tree" "$1" "$2"
 }
 
 typeset -a zsh_directory_name_functions
-if [[ -d "$HOME/iree/main/src" ]]; then
+if [[ -d "$HOME/iree/main/iree" ]]; then
     zsh_directory_name_functions+=(kd__alias_iree_compiler kd__alias_iree_source)
 fi
 if [[ -d "$HOME/iree/main/build" ]]; then
     zsh_directory_name_functions+=kd__alias_iree_build
 fi
-if [[ -d "$HOME/llvm/main/src" ]]; then
+if [[ -d "$HOME/llvm/main/llvm-project" ]]; then
     zsh_directory_name_functions+=kd__alias_llvm_source
 fi
 if [[ -d "$HOME/llvm/main/build" ]]; then
