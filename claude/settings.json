@@ -27,7 +27,7 @@
     ],
     "ask": [
       "Bash(rm *)",
-      "Bash(sed * -i *)",
+      "Bash(sed * -i *)"
     ],
     "deny": [
       "Bash(sudo *)",
