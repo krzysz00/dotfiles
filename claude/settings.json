@@ -1,10 +1,7 @@
 {
-  "model": "opus",
-  "alwaysThinkingEnabled": true,
-  "enabledPlugins": {
-    "clangd-lsp@claude-plugins-official": true
+  "env": {
+    "ENABLE_LSP_TOOLS": "1"
   },
-  "env": { "ENABLE_LSP_TOOLS": 1 },
   "permissions": {
     "allow": [
       "Bash(grep *)",
@@ -25,13 +22,18 @@
       "Bash(build_mlir.bash)",
       "Bash(build_llvm.bash)"
     ],
-    "ask": [
-      "Bash(rm *)",
-      "Bash(sed * -i *)"
-    ],
     "deny": [
       "Bash(sudo *)",
       "Bash(git push *)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(sed * -i *)"
     ]
-  }
+  },
+  "model": "claude-opus-4.6",
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true
 }
