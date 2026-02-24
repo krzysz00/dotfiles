@@ -96,6 +96,10 @@ kd__alias_branched_directory_factory() {
         local exp1
         local -a dirs
         dirs=($prefix/*/$suffix(/:s@$suffix@@:t))
+        # Special-case workaround for iree/*/iree
+        if [[ $suffix == "iree" ]]; then
+          dirs=($prefix/*/$suffix(/:h:t))
+        fi
         dirs=(${abbrev}:${^dirs})
         _wanted dynamic-dirs exp1 "dynamic $desc directory" compadd -S\] -a dirs
         return
