@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Grep(**)",
+      "LS(**)",
+      "SemanticSearch(**)",
+      "Shell(git diff **)",
+      "Shell(git -C * diff **)",
+      "Shell(git status **)",
+      "Shell(git -C * status **)",
+      "Shell(git log **)",
+      "Shell(git -C * log **)",
+      "Shell(git show **)",
+      "Shell(git -C * show **)",
+      "Shell(git blame **)",
+      "Shell(git -C * blame **)",
+      "Shell(git rev-parse **)",
+      "Shell(git -C * rev-parse **)",
+      "Shell(gh pr view **)",
+      "Shell(gh pr list **)",
+      "Shell(gh pr diff **)",
+      "Shell(gh pr checks **)",
+      "Shell(gh issue view **)",
+      "Shell(gh issue list **)",
+      "Shell(gh search **)",
+      "WebFetch(https://github.com/**)",
+      "WebFetch(https://gist.github.com/**)"
+    ],
+    "deny": [
+      "Write(**)",
+      "Delete(**)",
+      "Shell(**)"
+    ]
+  }
+}
