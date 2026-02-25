@@ -1,0 +1,39 @@
+{
+  "env": {
+    "ENABLE_LSP_TOOLS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(grep *)",
+      "Bash(tail *)",
+      "Bash(head *)",
+      "Bash(cmake *)",
+      "Bash(ninja *)",
+      "Bash(llvm-lit *)",
+      "Bash(FileCheck *)",
+      "Bash(mlir-opt *)",
+      "Bash(iree-compile *)",
+      "Bash(iree-opt *)",
+      "Bash(git show *)",
+      "Bash(configure_iree.bash)",
+      "Bash(configure_mlir_llvm.bash)",
+      "Bash(build_iree.bash)",
+      "Bash(test_iree.bash)",
+      "Bash(build_mlir.bash)",
+      "Bash(build_llvm.bash)"
+    ],
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(git push *)"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(sed * -i *)"
+    ]
+  },
+  "model": "claude-opus-4.6",
+  "enabledPlugins": {
+    "clangd-lsp@claude-plugins-official": true
+  },
+  "alwaysThinkingEnabled": true
+}
