@@ -4,6 +4,9 @@
   },
   "permissions": {
     "allow": [
+      "Bash(ls *)",
+      "Bash(echo *)",
+      "Bash(test *)",
       "Bash(grep *)",
       "Bash(tail *)",
       "Bash(head *)",
@@ -15,12 +18,17 @@
       "Bash(iree-compile *)",
       "Bash(iree-opt *)",
       "Bash(git show *)",
-      "Bash(configure_iree.bash)",
-      "Bash(configure_mlir_llvm.bash)",
-      "Bash(build_iree.bash)",
-      "Bash(test_iree.bash)",
-      "Bash(build_mlir.bash)",
-      "Bash(build_llvm.bash)"
+      "Bash(git add *)",
+      "Bash(configure_iree.bash *)",
+      "Bash(configure_mlir_llvm.bash *)",
+      "Bash(./build_iree.bash *)",
+      "Bash(./test_iree.bash *)",
+      "Bash(./build_mlir.bash *)",
+      "Bash(./build_llvm.bash *)",
+      "Edit(/marks.md)",
+      "Edit(/project-map.md)",
+      "Read(~/.claude/skills/peanut-gallery-review/personas/*)",
+      "Read(~/.claude/skills/ask-the-peanut-gallery/*)"
     ],
     "deny": [
       "Bash(sudo *)",
