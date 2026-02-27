@@ -39,7 +39,7 @@
       "Bash(sed * -i *)"
     ]
   },
-  "model": "claude-opus-4.6",
+  "model": "opus",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true
   },
