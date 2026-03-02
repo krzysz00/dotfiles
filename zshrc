@@ -154,7 +154,7 @@ function llcmake() {
     pushd llvm && { cmake "$@" ; popd; }
 }
 
-if [[ $TERM = "xterm" ]]; then
+if [[ $TERM == "xterm" ]] || [[$TERM == "xterm-256color" ]]; then
     export TERM="xterm-direct"
 fi
 
