@@ -1,7 +1,4 @@
 AddKeysToAgent yes
-Host cse01
-     HostName cse01.cse.unt.edu
-     User kd0136
 Host cao
      HostName crawl.akrasiac.org
      User joshua
@@ -9,31 +6,16 @@ Host cao
      Compression yes
      PubkeyAcceptedKeyTypes=+ssh-rsa
      HostKeyAlgorithms=+ssh-rsa
+     SetEnv TERM=xterm-256color
 Host cdo
      User crawl
      HostName crawl.develz.org
      IdentityFile ~/.ssh/cao_key
      Compression yes
-Host *.cs.utexas.edu
-     User drewniak
-     ForwardX11 yes
-     ForwardX11Trusted yes
-Host *.tacc.utexas.edu
-     User drewniak
-Host bicycle
-     HostName bicycle.cs.washington.edu
-Host tricycle
-     HostName tricycle.cs.washington.edu
-Host kopis
-     HostName kopis.cs.washington.edu
-Host *.cs.washington.edu bicycle tricycle kopis bicycle_backup
-     User krzysd
+     SetEnv TERM=xterm-256color
 Host direct.plotprotectors.org
      User deploy
      Port 3463
-Host bicycle_backup
-     HostName bicycle.cs.washington.edu
-     IdentityFile ~/.ssh/id_ed25519_backups
 Host rsync.net
      HostName de2468.rsync.net
      User de2468
