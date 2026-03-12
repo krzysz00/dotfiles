@@ -155,15 +155,13 @@ function llcmake() {
     pushd llvm && { cmake "$@" ; popd; }
 }
 
-if [[ $TERM == "xterm" ]] || [[ $TERM == "xterm-256color" ]]; then
+if [[ $TERM == "xterm" ]] || [[ w$TERM == "xterm-256color" ]]; then
     export TERM="xterm-direct"
 fi
 
 if [[ ! -v SSH_AUTH_SOCK ]] && command -v keychain &>/dev/null; then
     eval "$(keychain --eval --quiet)"
 fi
-
-export GPG_TTY=$(tty)
 
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
