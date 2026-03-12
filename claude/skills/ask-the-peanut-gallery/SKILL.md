@@ -24,10 +24,10 @@ mkdir -p <workspace>/.cursor
 cp /path/to/cli.sample.json <workspace>/.cursor/cli.json
 ```
 
-The sample allows read-only access and git commands, with all writes denied.
-The agents don't need write permissions — their stdout is captured into output
-files by the script. Users should add project-specific shell commands (e.g.
-`Shell(ninja **)`, `Shell(pytest **)`) as needed.
+The sample allows read-only access, git commands, coreutils, and common
+test/build tools. The allow list acts as a whitelist — only listed commands
+are permitted. Users should add project-specific shell commands (e.g.
+`Shell(ninja -C build **)`, `Shell(ctest --test-dir build **)`) as needed.
 
 ## Steps
 
