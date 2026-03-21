@@ -39,7 +39,17 @@ def parse_args():
     parser.add_argument(
         "--timeout", type=int, default=480, help="Per-agent timeout in seconds (default: 480)"
     )
-    parser.add_argument("prompt", nargs="*", help="Prompt template (joined with spaces)")
+    parser.add_argument(
+        "--prompt",
+        dest="prompt_opt",
+        help="Prompt template text, or path to a prompt file (if a single word matching an existing file)",
+    )
+    parser.add_argument(
+        "--prompt-file",
+        dest="prompt_file",
+        help="Read prompt template from FILE",
+    )
+    parser.add_argument("prompt_positional", nargs="*", help="Prompt template (joined with spaces)")
     return parser.parse_args()
 
 
@@ -138,15 +148,41 @@ def resolve_prompt(template, agent_vars, include_dir):
     return re.sub(r"\{\{(\w+)\}\}", replacer, template)
 
 
+def resolve_prompt_source(prompt_opt, prompt_file, prompt_positional):
+    """Resolve prompt from --prompt, --prompt-file, or positional args (first wins).
+
+    --prompt uses a heuristic: a single token (no spaces) that exists as a file
+    is read as a file; otherwise the value is used as literal text.
+    --prompt-file always reads from the given path.
+    """
+    if prompt_opt is not None:
+        # Single token, no spaces, existing file → read it
+        if " " not in prompt_opt and os.path.isfile(prompt_opt):
+            return Path(prompt_opt).read_text()
+        return prompt_opt
+
+    if prompt_file is not None:
+        p = Path(prompt_file)
+        if not p.is_file():
+            print(f"Error: --prompt-file not found: {prompt_file}", file=sys.stderr)
+            sys.exit(1)
+        return p.read_text()
+
+    if prompt_positional:
+        return " ".join(prompt_positional)
+
+    return ""
+
+
 def main():
     # Flush prints immediately so callers see progress in real time.
     sys.stdout.reconfigure(line_buffering=True)
 
     args = parse_args()
 
-    prompt = " ".join(args.prompt)
+    prompt = resolve_prompt_source(args.prompt_opt, args.prompt_file, args.prompt_positional)
     if not prompt:
-        print("Error: a prompt is required.", file=sys.stderr)
+        print("Error: a prompt is required (use --prompt, --prompt-file, or positional args).", file=sys.stderr)
         sys.exit(1)
 
     agents = load_agents(args.agents)

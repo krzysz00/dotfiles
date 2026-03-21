@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
     cat <<'EOF'
-Usage: cursor-task [OPTIONS] --workspace DIR PROMPT...
+Usage: cursor-task [OPTIONS] --workspace DIR [PROMPT...]
 
 Run a Cursor agent non-interactively to produce a markdown file.
 
@@ -18,11 +18,20 @@ Options:
   --output-dir DIR    Output directory (default: <workspace>/.cursor/tasks)
   --name NAME         Task name for the output subdirectory (default: timestamp)
   --timeout SECS      Timeout in seconds (default: 480)
+  --prompt TEXT|FILE  Prompt text, or path to a prompt file (if a single word
+                      matching an existing file)
+  --prompt-file FILE  Read prompt from FILE
   -h, --help          Show this help
+
+The prompt can be provided as: --prompt, --prompt-file, or trailing positional
+arguments. If multiple sources are given, the first one wins (in that order).
 
 Examples:
   cursor-task --workspace ~/iree/main \
-    "Review the recent changes to the compiler pipeline"
+    --prompt "Review the recent changes to the compiler pipeline"
+
+  cursor-task --workspace ~/iree/main \
+    --prompt-file /tmp/review/prompt.txt
 
   cursor-task --model gpt-5 --workspace ~/iree/main --name vmvx-analysis \
     "Analyze test failures in the VMVX backend"
@@ -35,22 +44,51 @@ workspace=""
 output_dir=""
 task_name=""
 timeout_secs=480
+opt_prompt=""
+opt_prompt_file=""
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
-        --model)      model="$2"; shift 2 ;;
-        --workspace)  workspace="$2"; shift 2 ;;
-        --output-dir) output_dir="$2"; shift 2 ;;
-        --name)       task_name="$2"; shift 2 ;;
-        --timeout)    timeout_secs="$2"; shift 2 ;;
-        -h|--help)    usage 0 ;;
-        --)           shift; break ;;
-        -*)           echo "Error: Unknown option: $1" >&2; usage 1 ;;
-        *)            break ;;
+        --model)       model="$2"; shift 2 ;;
+        --workspace)   workspace="$2"; shift 2 ;;
+        --output-dir)  output_dir="$2"; shift 2 ;;
+        --name)        task_name="$2"; shift 2 ;;
+        --timeout)     timeout_secs="$2"; shift 2 ;;
+        --prompt)      opt_prompt="$2"; shift 2 ;;
+        --prompt-file) opt_prompt_file="$2"; shift 2 ;;
+        -h|--help)     usage 0 ;;
+        --)            shift; break ;;
+        -*)            echo "Error: Unknown option: $1" >&2; usage 1 ;;
+        *)             break ;;
     esac
 done
 
-prompt="$*"
+positional_prompt="$*"
+
+# Resolve prompt: --prompt > --prompt-file > positional
+resolve_prompt_arg() {
+    local text="$1"
+    # Single token (no spaces) that exists as a file → read it
+    if [[ "$text" != *" "* && -f "$text" ]]; then
+        cat "$text"
+    else
+        printf '%s' "$text"
+    fi
+}
+
+if [[ -n "$opt_prompt" ]]; then
+    prompt="$(resolve_prompt_arg "$opt_prompt")"
+elif [[ -n "$opt_prompt_file" ]]; then
+    if [[ ! -f "$opt_prompt_file" ]]; then
+        echo "Error: --prompt-file not found: $opt_prompt_file" >&2
+        exit 1
+    fi
+    prompt="$(cat "$opt_prompt_file")"
+elif [[ -n "$positional_prompt" ]]; then
+    prompt="$positional_prompt"
+else
+    prompt=""
+fi
 
 if [[ -z "$workspace" || -z "$prompt" ]]; then
     echo "Error: --workspace and a prompt are required." >&2

@@ -25,9 +25,10 @@ project needs. Check that:
 - Build directory paths in the allow list match the project's actual build
   directory layout (e.g. `./build/**` won't help if the build dir is
   `../build-release/`)
-- The `--workspace` passed to `cursor-agent-multi.py` is the right working
-  directory — agents resolve relative paths (build dirs, test binaries) from
-  this root
+- The `--workspace` passed to `cursor-agent-multi.py` sets the agents'
+  working directory. It should be a parent that covers both the repo and
+  build directories. Tell agents in the prompt which subdirectory is the
+  repo root (for `git -C`) and where the build directory is
 
 ## Prompt boilerplate
 
