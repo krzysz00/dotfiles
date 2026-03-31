@@ -27,12 +27,12 @@ Do not include anything excepts paths to the key directories.
 ## Directories
 
 - Worskpace dir: `/home/user/foo/bar`
-- Source dir (git): `/home/user/foo/bar/foo`
-- Build dir: `/home/user/foo/bar/build`
+- Source dir (git): `/home/user/foo/bar/src`
+- Build dir (git): `/home/user/foo/bar/build`
 - Binary dirs:
   * `/home/user/foo/bar/build/bin`
   * `/home/user/foo/bar/build/tools`
-- Virtual environment: `/home/users/foo/bar/.direnv/python-uv-python3`
+- Virtual environment: `/home/users/foo/bar/.venv`
 
 ## Binaries
 

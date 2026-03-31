@@ -5,6 +5,21 @@
       "Grep(**)",
       "LS(**)",
       "SemanticSearch(**)",
+
+      "Shell(cat **)",
+      "Shell(head **)",
+      "Shell(tail **)",
+      "Shell(wc **)",
+      "Shell(find **)",
+      "Shell(ls **)",
+      "Shell(diff **)",
+      "Shell(which **)",
+      "Shell(file **)",
+      "Shell(tree **)",
+      "Shell(realpath **)",
+      "Shell(dirname **)",
+      "Shell(basename **)",
+
       "Shell(git diff **)",
       "Shell(git -C * diff **)",
       "Shell(git status **)",
@@ -17,20 +32,51 @@
       "Shell(git -C * blame **)",
       "Shell(git rev-parse **)",
       "Shell(git -C * rev-parse **)",
+
       "Shell(gh pr view **)",
+      "Shell(gh -R * pr view **)",
       "Shell(gh pr list **)",
+      "Shell(gh -R * pr list **)",
       "Shell(gh pr diff **)",
+      "Shell(gh -R * pr diff **)",
       "Shell(gh pr checks **)",
+      "Shell(gh -R * pr checks **)",
       "Shell(gh issue view **)",
+      "Shell(gh -R * issue view **)",
       "Shell(gh issue list **)",
+      "Shell(gh -R * issue list **)",
       "Shell(gh search **)",
+      "Shell(gh -R * search **)",
+
+      "Shell(ctest **)",
+      "Shell(cmake --build **)",
+      "Shell(ninja **)",
+      "Shell(make **)",
+      "Shell(cd * && make **)",
+      "Shell(python -m pytest **)",
+      "Shell(cd * && python -m pytest **)",
+      "Shell(pytest **)",
+      "Shell(cd * && pytest **)",
+      "Shell(npm test **)",
+      "Shell(cd * && npm test **)",
+      "Shell(cargo test **)",
+      "Shell(cd * && cargo test **)",
+
+      "Shell(./build/**)",
+      "Shell(build/**)",
+      "Shell(./build-*/**)",
+      "Shell(build-*/**)",
+      "Shell(./cmake-build-*/**)",
+      "Shell(cmake-build-*/**)",
+      "Shell(./out/**)",
+      "Shell(out/**)",
+
       "WebFetch(https://github.com/**)",
       "WebFetch(https://gist.github.com/**)"
     ],
     "deny": [
       "Write(**)",
-      "Delete(**)",
-      "Shell(**)"
+      "Delete(**)"
     ]
   }
 }

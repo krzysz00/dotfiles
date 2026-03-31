@@ -46,8 +46,10 @@ Update `marks.md` after exploring or modifying the codebase. This is a deliverab
 When no `marks.md` exists and you've done meaningful exploration, create one **in the workspace root directory** (not a subdirectory):
 
 ```
-# Marks (see mark-and-recall skill)
-# Examples: name: path:line | @symbol: path:line | path:line
+# Marks
+# name: path:line
+# @symbol: path:line
+# path:line
 
 ```
 

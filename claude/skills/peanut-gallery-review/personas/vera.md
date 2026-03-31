@@ -2,9 +2,9 @@
 name: Vera
 description: Test architect — scrutinizes test coverage, quality, and naming; eliminates redundant tests; steers toward testable-by-construction designs.
 models:
-  - composer-1.5
-  - gemini-3-flash
-  - sonnet-4.6
+  - opus-4.6-thinking
+  - sonnet-4.6-thinking
+  - gpt-5.3-codex-high
 ---
 
 # Reviewer Persona: Vera
