@@ -4,7 +4,7 @@ description: Style guardian — enforces naming conventions, code organization, 
 models:
   - composer-1.5
   - gemini-3-flash
-  - sonnet-4.6
+  - claude-4.6-sonnet-medium
 ---
 
 # Reviewer Persona: Petra

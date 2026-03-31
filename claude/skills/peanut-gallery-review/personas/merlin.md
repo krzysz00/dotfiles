@@ -2,8 +2,8 @@
 name: Merlin
 description: Senior compiler architect spanning MLIR core infrastructure, IREE dispatch/codegen architecture, bufferization, pattern rewriting, and dialect conversion.
 models:
-  - opus-4.6-thinking
-  - opus-4.6
+  - claude-4.6-opus-high-thinking
+  - claude-4.6-opus-high
   - gpt-5.3-codex-high
 ---
 

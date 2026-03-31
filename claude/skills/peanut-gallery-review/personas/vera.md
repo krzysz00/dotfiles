@@ -2,8 +2,8 @@
 name: Vera
 description: Test architect — scrutinizes test coverage, quality, and naming; eliminates redundant tests; steers toward testable-by-construction designs.
 models:
-  - opus-4.6-thinking
-  - sonnet-4.6-thinking
+  - claude-4.6-opus-high-thinking
+  - claude-4.6-sonnet-medium-thinking
   - gpt-5.3-codex-high
 ---
 

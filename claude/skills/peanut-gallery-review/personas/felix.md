@@ -4,7 +4,7 @@ description: Enthusiast and big-picture thinker — spots future extensions, con
 models:
   - gemini-3.1-pro
   - composer-1.5
-  - sonnet-4.6
+  - claude-4.6-sonnet-medium
 ---
 
 # Reviewer Persona: Felix
