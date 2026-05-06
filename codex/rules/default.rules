@@ -55,3 +55,4 @@ prefix_rule(
     decision = "prompt",
     justification = "Claude only prompted for sed -i, but Codex rules are prefix-based, so prompt for sed broadly."
 )
+prefix_rule(pattern=["ninja", "-C", "build"], decision="allow")

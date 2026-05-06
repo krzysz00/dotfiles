@@ -12,3 +12,10 @@ model_reasoning_effort = "xhigh"
 [features]
 multi_agent = true
 apps = true
+[sandbox_workspace_write]
+writable_roots = [
+    "/home/kdrewnia/.cache/ccache/",
+    "/home/krzys/.cache/ccache/",
+    "/home/kdrewnia/reviews/",
+    "/home/krzys/reviews/"
+]
