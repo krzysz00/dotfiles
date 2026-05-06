@@ -1,0 +1,57 @@
+prefix_rule(pattern = ["ls"], decision = "allow")
+prefix_rule(pattern = ["echo"], decision = "allow")
+prefix_rule(pattern = ["test"], decision = "allow")
+prefix_rule(pattern = ["grep"], decision = "allow")
+prefix_rule(pattern = ["tail"], decision = "allow")
+prefix_rule(pattern = ["head"], decision = "allow")
+
+prefix_rule(pattern = ["cmake"], decision = "allow")
+prefix_rule(pattern = ["ninja"], decision = "allow")
+prefix_rule(pattern = ["llvm-lit"], decision = "allow")
+prefix_rule(pattern = ["FileCheck"], decision = "allow")
+prefix_rule(pattern = ["mlir-opt"], decision = "allow")
+prefix_rule(pattern = ["iree-compile"], decision = "allow")
+prefix_rule(pattern = ["iree-opt"], decision = "allow")
+prefix_rule(pattern = ["build/bin/llvm-lit"], decision = "allow")
+prefix_rule(pattern = ["build/bin/FileCheck"], decision = "allow")
+prefix_rule(pattern = ["build/llvm-project/bin/llvm-lit"], decision = "allow")
+prefix_rule(pattern = ["build/llvm-project/bin/FileCheck"], decision = "allow")
+prefix_rule(pattern = ["build/bin/mlir-opt"], decision = "allow")
+prefix_rule(pattern = ["build/tools/iree-compile"], decision = "allow")
+prefix_rule(pattern = ["build/tools/iree-opt"], decision = "allow")
+
+prefix_rule(pattern = ["git", "show"], decision = "allow")
+prefix_rule(pattern = ["git", "add"], decision = "allow")
+
+prefix_rule(pattern = ["configure_iree.bash"], decision = "allow")
+prefix_rule(pattern = ["configure_mlir_llvm.bash"], decision = "allow")
+prefix_rule(pattern = ["./build_iree.bash"], decision = "allow")
+prefix_rule(pattern = ["./test_iree.bash"], decision = "allow")
+prefix_rule(pattern = ["./build_mlir.bash"], decision = "allow")
+prefix_rule(pattern = ["./build_llvm.bash"], decision = "allow")
+
+prefix_rule(pattern = ["peanut-review"], decision = "allow")
+
+prefix_rule(
+    pattern = ["sudo"],
+    decision = "forbidden",
+    justification = "Do not run sudo from Codex; ask the user to run privileged commands."
+)
+
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "forbidden",
+    justification = "Do not push from Codex; leave publishing to the user."
+)
+
+prefix_rule(
+    pattern = ["rm"],
+    decision = "prompt",
+    justification = "Destructive filesystem changes require explicit approval."
+)
+
+prefix_rule(
+    pattern = ["sed"],
+    decision = "prompt",
+    justification = "Claude only prompted for sed -i, but Codex rules are prefix-based, so prompt for sed broadly."
+)
