@@ -26,6 +26,9 @@
       "rm *": "deny",
       "git push": "deny",
       "git push *": "deny"
+    },
+    "external_directory": {
+      "~/kuhar-agent-workspace/**": "allow"
     }
   }
 }
