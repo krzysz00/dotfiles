@@ -1,0 +1,31 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://llm-api.amd.com/Anthropic/v1",
+        "apiKey": "dummy",
+        "headers": {
+          "Ocp-Apim-Subscription-Key": "{env:AMD_LLM_API_KEY}"
+        }
+      }
+    },
+    "openai" : {
+      "options": {
+        "baseURL": "https://llm-api.amd.com/OpenAI",
+        "apiKey": "dummy",
+        "headers": {
+          "Ocp-Apim-Subscription-Key": "{env:AMD_LLM_API_KEY}"
+        }
+      }
+    }
+  },
+  "permission": {
+    "bash": {
+      "rm": "deny",
+      "rm *": "deny",
+      "git push": "deny",
+      "git push *": "deny"
+    }
+  }
+}
