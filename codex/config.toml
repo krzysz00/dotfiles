@@ -23,5 +23,7 @@ writable_roots = [
     "/home/krzys/reviews/",
     "/home/kdrewnia/iree/main/iree/.git",
     "/home/kdrewnia/llvm/main/llvm-project/.git",
-    "/home/krzys/llvm/main/llvm-project/.git"
+    "/home/krzys/llvm/main/llvm-project/.git",
+    "/home/kdrewnia/.codex/",
+    "/home/krzys/.codex/"
 ]
