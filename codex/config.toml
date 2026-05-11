@@ -15,7 +15,11 @@ model_reasoning_effort = "xhigh"
 [features]
 multi_agent = true
 apps = true
+[tui]
+animations = false
 [sandbox_workspace_write]
+# TODO: remove this once Codex lets you make a command do a sandbox escape.
+network_access = true
 writable_roots = [
     "/home/kdrewnia/.cache/ccache/",
     "/home/krzys/.cache/ccache/",
