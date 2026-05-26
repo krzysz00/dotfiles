@@ -96,8 +96,8 @@ kd__alias_branched_directory_factory() {
         local exp1
         local -a dirs
         dirs=($prefix/*/$suffix(/:s@$suffix@@:t))
-        # Special-case workaround for iree/*/iree
-        if [[ $suffix == "iree" ]]; then
+        # Special-case workaround for triton/*/triton
+        if [[ $suffix == "triton" ]]; then
           dirs=($prefix/*/$suffix(/:h:t))
         fi
         dirs=(${abbrev}:${^dirs})
@@ -109,36 +109,26 @@ kd__alias_branched_directory_factory() {
     return 0
 }
 
-kd__alias_iree_compiler() {
-    kd__alias_branched_directory_factory "$HOME/iree" "iree/compiler/src/iree/compiler" "ic" "IREE compiler source" "$1" "$2"
-}
-kd__alias_iree_source() {
-    kd__alias_branched_directory_factory "$HOME/iree" "iree" "is" "IREE source tree" "$1" "$2"
-}
-kd__alias_iree_build() {
-    kd__alias_branched_directory_factory "$HOME/iree" "build" "ib" "IREE build tree" "$1" "$2"
-}
 kd__alias_llvm_source() {
     kd__alias_branched_directory_factory "$HOME/llvm" "llvm-project" "ls" "LLVM source tree" "$1" "$2"
 }
 kd__alias_llvm_build() {
     kd__alias_branched_directory_factory "$HOME/llvm" "build" "lb" "LLVM build tree" "$1" "$2"
 }
+kd__alias_triton_source() {
+    kd__alias_branched_directory_factory "$HOME/triton" "triton" "tr" "Triton source tree" "$1" "$2"
+}
 
 typeset -a zsh_directory_name_functions
-if [[ -d "$HOME/iree/main/iree" ]]; then
-    zsh_directory_name_functions+=(kd__alias_iree_compiler kd__alias_iree_source)
-fi
-if [[ -d "$HOME/iree/main/build" ]]; then
-    zsh_directory_name_functions+=kd__alias_iree_build
-fi
 if [[ -d "$HOME/llvm/main/llvm-project" ]]; then
     zsh_directory_name_functions+=kd__alias_llvm_source
 fi
 if [[ -d "$HOME/llvm/main/build" ]]; then
     zsh_directory_name_functions+=kd__alias_llvm_build
 fi
-
+if [[ -d "$HOME/triton/main/triton" ]]; then
+    zsh_directory_name_functions+=kd__alias_triton_source
+fi
 
 if [[ "$TERM" != eterm* ]]; then
     RPROMPT='${vcs_info_msg_0_}'

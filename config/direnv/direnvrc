@@ -74,3 +74,21 @@ use_iree() {
   path_add PYTHONPATH "$abs_build_dir/runtime/binidngs/python"
   path_add PYTHONPATH "$abs_build_dir/compiler/bindings/python"
 }
+
+# Usage: use triton triton_project_root [python_version]
+use_triton() {
+  if [[ $# -lt 1 || $# -gt 2 ]]; then
+     log_error "Usage: use triton triton_project_root [python_version]"
+  fi
+  local project_root="$1"
+  local python_ver="${2:-python3}"
+
+  local REPLY
+  realpath.absolute "$project_root"
+  direnv_layout_dir="$REPLY/.direnv"
+  layout uv "$python_ver"
+
+  export TRITON_BUILD_WITH_CLANG_LLD=true
+  export TRITON_BUILD_WITH_CCACHE=true
+  export UV_NO_BUILD_ISOLATION=true
+}
