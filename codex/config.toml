@@ -1,17 +1,14 @@
-profile = "corp"
+model = "gpt-5.5"
+model_reasoning_effort = "xhigh"
+model_provider = "custom-gateway"
+
 [model_providers.custom-gateway]
 name = "AMD LLM Gateway"
 base_url = "https://llm-api.amd.com/OpenAI"
 wire_api = "responses"
 # Maps the header name to an environment variable name
 env_http_headers = { "Ocp-Apim-Subscription-Key" = "AMD_LLM_API_KEY" }
-[profiles.default]
-model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
-[profiles.corp]
-model_provider = "custom-gateway"
-model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
+
 [features]
 multi_agent = true
 apps = true
