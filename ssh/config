@@ -20,55 +20,12 @@ Host rsync.net
      HostName de2468.rsync.net
      User de2468
 
-Host dev devshell
-     HostName 10.216.64.100
-     Port 30039
-     User kdrewnia
-Host devshell
-     RemoteCommand docker-compose exec mlir_dev tmux -2 attach
-     RequestTTY force
-
 Host kdrewnia-desk desk deskshell
   HostName kdrewnia-desk
   User kdrewnia
 Host deskshell
   RemoteCommand tmux -2 attach
   RequestTTY force
-
-# Lockhart
-Host lockhart
-  HostName 10.216.108.2
-  User kdrewnia
-Host lockhart-admin
-  HostName 10.216.108.4
-  User kdrewnia
-Host lockhart-login3
-  HostName 10.216.108.5
-  User kdrewnia
-
-Host lockhart4 lockhart5 lockhart6 lockhart7 lockhart8 lockhart4shell lockhart5shell lockhart6shell lockhart7shell lockhart8shell
-  ProxyJump lockhart
-  User kdrewnia
-
-Host lockhart4 lockhart4shell
-  HostName x1001c3s0b0n0
-Host lockhart5 lockhart5shell
-  HostName x1001c3s0b1n0
-Host lockhart6 lockhart6shell
-  HostName x1001c3s1b0n0
-Host lockhart7 lockhart7shell
-  HostName x1001c3s1b1n0
-Host lockhart8 lockhart8shell
-  HostName x1001c3s3b0n0
-
-Host lockhart4shell lockhart5shell lockhart6shell lockhart7shell lockhart8shell
-  RemoteCommand docker-compose exec mlir_dev tmux -2 attach
-  RequestTTY force
-
-Host gerritgit
-  HostName git.amd.com
-  User kdrewnia
-  Port 29418
 
 Host sharkmi300x-3 sharkmi300x-3shell
   HostName sharkmi300x-3.xlnx.xilinx.com
@@ -84,9 +41,14 @@ Host sharkmi300x-4shell
   RemoteCommand tmux -2 attach
   RequestTTY force
 
+Host bg-1w300-h3-1
+  HostName bg-1w300-h3-1.mkm.dcgpu
+  User kdrewnia
+
 Host shark-bastion
   User nod
   HostName 149.199.62.117
+  ProxyJump desk
 
 Host shark23
   User kdrewnia
@@ -101,3 +63,11 @@ Host ossci
   Port 2222
   StrictHostKeyChecking no
   UserKnownHostsFile /dev/null
+
+Host bacon baconshell
+  HostName cv350-rck-g03-e04-18.rck.dcgpu
+  User kdrewnia
+
+Host baconshell
+  RemoteCommand tmux -2 attach
+  RequestTTY force
