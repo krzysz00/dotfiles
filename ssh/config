@@ -1,4 +1,8 @@
 AddKeysToAgent yes
+Host github.com-amdemu
+     User git
+     HostName github.com
+     IdentityFile ~/.ssh/id_ed25519-amdemu
 Host cao
      HostName crawl.akrasiac.org
      User joshua
