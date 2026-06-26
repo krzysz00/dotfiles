@@ -28,23 +28,14 @@ Host rsync.net
 Host kdrewnia-desk desk deskshell
   HostName kdrewnia-desk
   User kdrewnia
-Host deskshell
-  RemoteCommand tmux -2 attach
-  RequestTTY force
 
 Host sharkmi300x-3 sharkmi300x-3shell
   HostName sharkmi300x-3.xlnx.xilinx.com
   User kdrewnia
-Host sharkmi300x-3shell
-  RemoteCommand tmux -2 attach
-  RequestTTY force
 
 Host sharkmi300x-4 sharkmi300x-4shell
   HostName 172.19.24.15
   User kdrewnia
-Host sharkmi300x-4shell
-  RemoteCommand tmux -2 attach
-  RequestTTY force
 
 Host bg-1w300-h3-1
   HostName bg-1w300-h3-1.mkm.dcgpu
@@ -55,7 +46,7 @@ Host shark-bastion
   HostName 149.199.62.117
   ProxyJump desk
 
-Host shark23
+Host shark23 shark23shell
   User kdrewnia
   #HostName 10.23.232.227
   HostName 10.23.239.8
@@ -73,6 +64,11 @@ Host bacon baconshell
   HostName cv350-rck-g03-e04-18.rck.dcgpu
   User kdrewnia
 
-Host baconshell
+Host *shell
   RemoteCommand tmux -2 attach
   RequestTTY force
+
+Host *
+   ControlMaster auto
+   ControlPath ~/.ssh/master-socket-%r@%h:%p
+   ControlPersist 5m
