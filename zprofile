@@ -6,7 +6,7 @@ path=(~/progs/bin ~/.local/bin ~/amd-scripts/bin $RBENV_ROOT/bin $PYENV_ROOT/bin
 
 typeset -aUT LD_LIBRARY_PATH ld_library_path
 
-if [[ -d "$THEROCK_ROOT" ]]; then
+if [[ -d "$THEROCK_ROOT/bin" ]]; then
    ld_library_path=($THEROCK_ROOT/lib $ld_library_path)
    export ROCM_CHIP=$($THEROCK_ROOT/bin/rocm_agent_enumerator | head -n 1)
    export ROCM_PATH="$THEROCK_ROOT"

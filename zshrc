@@ -66,7 +66,11 @@ function {
     if [[ "$username" == "krzys" || "$username" == "kdrewnia" ]]; then
         user_part=""
     fi
-    PS1="%B%F{yellow}${user_part}%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
+    local no_rocm_part=""
+    if [[ -n $HIDING_SYSTEM_ROCM ]]; then
+      no_rocm_part="%UNR%u "
+    fi
+    PS1="${no_rocm_part}%B%F{yellow}${user_part}%m %F{red}%~%F{blue} %T %F{green}%#%b%f "
 }
 
 # Directory alias factory
