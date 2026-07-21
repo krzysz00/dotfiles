@@ -39,6 +39,24 @@ layout_uv() {
   PATH_add "$VIRTUAL_ENV/bin"
 }
 
+# usage: use rocm [path]
+use_rocm() {
+  local rocm_path=$1
+  if [[ -z $rocm_path ]]; then
+    log_error Usag: "use rocm [rocm_path]"
+    return 1
+  fi
+  if [[ ! -d "$rocm_path/bin" ]]; then
+    log_status "ROCm path $rocm_path has no contents"
+  fi
+  realpath.absolute "$rocm_path"
+  export ROCM_PATH="$REPLY"
+  path_add LD_LIBRARY_PATH "$ROCM_PATH/lib/rocm_sysdeps/lib"
+  # Set up path, LD_LIBRARY_PATH, etc.
+  load_prefix "$ROCM_PATH/llvm"
+  load_prefix "$ROCM_PATH"
+}
+
 # Usage: use iree iree_project_root iree_build_dir [python path] [iree_src_dir]
 # iree_source_dir defaults to the project root or [project root]/src, depending
 # on where tools/utils is found.
