@@ -1,5 +1,5 @@
-model = "gpt-5.5"
-model_reasoning_effort = "xhigh"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "high"
 model_provider = "custom-gateway"
 
 [model_providers.custom-gateway]
@@ -14,6 +14,10 @@ multi_agent = true
 apps = true
 [tui]
 animations = false
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 2
 [sandbox_workspace_write]
 # TODO: remove this once Codex lets you make a command do a sandbox escape.
 network_access = true
