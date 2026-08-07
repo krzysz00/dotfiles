@@ -1,6 +1,8 @@
 {
   "env": {
-    "ENABLE_LSP_TOOLS": "1"
+    "ENABLE_LSP_TOOLS": "1",
+    "CLAUDE_CODE_ACCESSIBILITY": "1",
+    "CLAUDE_AX_STARTUP_QUIET_MS": "0"
   },
   "permissions": {
     "allow": [
@@ -51,5 +53,6 @@
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "axScreenReader": true
 }
