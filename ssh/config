@@ -65,6 +65,9 @@ Host bacon baconshell
   HostName cv350-rck-g03-e04-18.rck.dcgpu
   User kdrewnia
 
+Host ribs ribsshell
+    Hostname smc300x-clt-r4c8-10.cs-clt.dcgpu
+
 Host *shell
   RemoteCommand tmux -2 attach
   RequestTTY force
