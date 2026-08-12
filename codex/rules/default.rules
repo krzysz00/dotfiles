@@ -58,3 +58,4 @@ prefix_rule(
 prefix_rule(pattern=["ninja", "-C", "build"], decision="allow")
 prefix_rule(pattern=["peanut-review", "--session"], decision="allow")
 prefix_rule(pattern=["br"], decision="allow")
+prefix_rule(pattern=["git", "add"], decision="allow")

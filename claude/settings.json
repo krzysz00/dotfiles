@@ -1,6 +1,8 @@
 {
   "env": {
-    "ENABLE_LSP_TOOLS": "1"
+    "ENABLE_LSP_TOOLS": "1",
+    "CLAUDE_CODE_ACCESSIBILITY": "1",
+    "CLAUDE_AX_STARTUP_QUIET_MS": "0"
   },
   "permissions": {
     "allow": [
@@ -16,6 +18,8 @@
       "Bash(FileCheck *)",
       "Bash(mlir-opt *)",
       "Bash(build/bin/llvm-lit *)",
+      "Bash(bin/llvm-lit *)",
+      "Bash(bin/FileCheck *)",
       "Bash(build/bin/FileCheck *)",
       "Bash(build/llvm-project/bin/llvm-lit *)",
       "Bash(build/llvm-project/bin/FileCheck *)",
@@ -26,6 +30,14 @@
       "Bash(build/tools/iree-opt *)",
       "Bash(git show *)",
       "Bash(git add *)",
+      "Bash(git status *)",
+      "Bash(git merge-base *)",
+      "Bash(git -C llvm-project show *)",
+      "Bash(git -C llvm-project add *)",
+      "Bash(git -C llvm-project status *)",
+      "Bash(git -C llvm-project merge-base *)",
+      "Bash(cd build)",
+      "Bash(cd llvm-project)",
       "Bash(configure_iree.bash *)",
       "Bash(configure_mlir_llvm.bash *)",
       "Bash(./build_iree.bash *)",
@@ -51,5 +63,6 @@
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "axScreenReader": true
 }
