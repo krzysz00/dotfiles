@@ -113,24 +113,29 @@ kd__alias_branched_directory_factory() {
     return 0
 }
 
+WORK="$HOME"
+if [[ $WORK != $HOME ]];
+   hash -d w="$WORK"
+fi
+
 kd__alias_llvm_source() {
-    kd__alias_branched_directory_factory "$HOME/llvm" "llvm-project" "ls" "LLVM source tree" "$1" "$2"
+    kd__alias_branched_directory_factory "$WORK/llvm" "llvm-project" "ls" "LLVM source tree" "$1" "$2"
 }
 kd__alias_llvm_build() {
-    kd__alias_branched_directory_factory "$HOME/llvm" "build" "lb" "LLVM build tree" "$1" "$2"
+    kd__alias_branched_directory_factory "$WORK/llvm" "build" "lb" "LLVM build tree" "$1" "$2"
 }
 kd__alias_triton_source() {
-    kd__alias_branched_directory_factory "$HOME/triton" "triton" "tr" "Triton source tree" "$1" "$2"
+    kd__alias_branched_directory_factory "$WORK/triton" "triton" "tr" "Triton source tree" "$1" "$2"
 }
 
 typeset -a zsh_directory_name_functions
-if [[ -d "$HOME/llvm/main/llvm-project" ]]; then
+if [[ -d "$WORK/llvm/main/llvm-project" ]]; then
     zsh_directory_name_functions+=kd__alias_llvm_source
 fi
-if [[ -d "$HOME/llvm/main/build" ]]; then
+if [[ -d "$WORK/llvm/main/build" ]]; then
     zsh_directory_name_functions+=kd__alias_llvm_build
 fi
-if [[ -d "$HOME/triton/main/triton" ]]; then
+if [[ -d "$WORK/triton/main/triton" ]]; then
     zsh_directory_name_functions+=kd__alias_triton_source
 fi
 
