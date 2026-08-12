@@ -114,7 +114,7 @@ kd__alias_branched_directory_factory() {
 }
 
 WORK="$HOME"
-if [[ $WORK != $HOME ]];
+if [[ $WORK != $HOME ]]; then
    hash -d w="$WORK"
 fi
 
