@@ -73,6 +73,18 @@ Host yoyo yoyoshell
   HostName SMC-SC-DI08-23.dh144.dcgpu
   User kdrewnia
 
+Host heliosr-1b114-d06-4 heliosr-1b114-d06-4shell
+  HostName heliosr-1b114-d06-4.mnb.dcgpu
+  Use kdrewnia
+
+Host bonkers bonkersshell
+  HostName ppac-cyxtera-cx59-6.ctr.dcgpu
+  User kdrewnia
+
+Host ruffie ruffieshell
+  HostName sh5-cyxtera-cx61-6.ctr.dcgpu
+  User kdrewnia
+
 Host *shell
   RemoteCommand tmux -2 attach
   RequestTTY force
