@@ -75,7 +75,7 @@ Host yoyo yoyoshell
 
 Host heliosr-1b114-d06-4 heliosr-1b114-d06-4shell
   HostName heliosr-1b114-d06-4.mnb.dcgpu
-  Use kdrewnia
+  User kdrewnia
 
 Host bonkers bonkersshell
   HostName ppac-cyxtera-cx59-6.ctr.dcgpu
