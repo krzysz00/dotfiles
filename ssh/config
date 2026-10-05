@@ -66,10 +66,12 @@ Host bacon baconshell
   User kdrewnia
 
 Host ribs ribsshell
-    HostName smc300x-clt-r4c8-10.cs-clt.dcgpu
+  HostName smc300x-csq-dh2-ch10-21.csq.dcgpu
+  User kdrewnia
 
 Host yoyo yoyoshell
-    HostName SMC-SC-DI08-23.dh144.dcgpu
+  HostName SMC-SC-DI08-23.dh144.dcgpu
+  User kdrewnia
 
 Host *shell
   RemoteCommand tmux -2 attach
